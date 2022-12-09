@@ -1,0 +1,173 @@
+/**
+Theme Name: Opozturk
+Author: Emre Ergin
+**/
+
+:root {
+    --acikbej: #fff9f8;
+    --bej: #edece8;
+    --acikpembe: #fff0ed;
+    --acikyesil: #c9ded1;
+    --koyubej: #ccc6c6;
+    --pembe:#fadcd6;
+    --kahve: #dcccc0;
+    --space: 3rem;
+    --yazirenk: #6c6565;
+}
+
+* {
+    /* outline: 2px solid red; */
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    display:flex;
+    width:100vw;
+    max-width: 100%;
+    min-height:100vh;
+    flex-direction:column;
+    margin:0px;
+    padding:0px;
+    background-color: var(--acikbej);
+    color: var(--yazirenk);
+    font-family: 'Epilogue', sans-serif;
+}
+
+a{
+    color: var(--yazirenk);
+}
+h2>a, h1>a{
+    text-decoration: none;
+}
+
+.susluyazi{
+    font-family: 'Sacramento', cursive;
+}
+
+.hugetext{
+    font-size:5rem;
+    line-height:3.5ex;
+}
+
+.container{
+    font-family: 'Open Sans', sans-serif;
+    font-size:20px;
+    line-height:2.75ex;
+    display:flex;
+    flex-direction: column;
+    padding-block: 5rem;
+    box-sizing: content-box;
+    max-inline-size: min(100ch ,calc(100vw - 2rem));
+    margin-inline: auto;
+    padding-inline: 1rem;
+    gap: 1rem;
+}
+
+
+
+.super-container{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    width:100vw;
+    max-width:100%;
+
+}
+
+.imageandtext{
+    display:flex;
+    gap: min(2vw,2rem);
+    align-items: center;
+    background-color: var(--bej);
+}
+
+.neden,.hakkimda, .insta, .iletisim, .bloglar{
+    padding: 5vw;
+}
+
+.greetings, .post-excerpt{
+    padding-block:5rem;
+    padding-inline:1vw;
+    width:48%;
+}
+
+.button{
+    border:2px var(--yazirenk) solid;
+    padding:0.75rem 2rem;
+    display:block;
+    margin-inline:auto;
+    margin-top:3ch;
+    max-width:300px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.button:hover{
+    color:var(--acikbej);
+    background-color: var(--yazirenk);
+}
+
+figure {
+    position: relative;
+    width:48%;
+    overflow: hidden;
+    margin-bottom:0px;
+}
+figure img {
+    min-height:400px;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+    display: block;
+}
+
+.wp-block-image{
+    margin-bottom:0px !important;
+}
+
+.maintitle{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.hakkimda{
+    background-color:var(--acikpembe);
+}
+
+.neden{
+    background-color: var(--acikyesil);
+}
+
+.insta{
+    background-color: var(--koyubej);
+}
+
+.iletisim{
+    background-color: var(--kahve);
+}
+
+#insta, #iletisim{
+    margin-bottom:0px;
+}
+
+.bloglar{
+    background-color: var(--pembe);
+}
+
+h1.blog-title{
+    line-height: 3.5rem;
+}
+
+@media (max-width: 600px) {
+    .attachment-medium{
+        margin-right: 3vw !important;
+        margin-left: 7vw !important;
+    }
+
+    .wp-block-latest-posts__featured-image{
+        margin-right: 0px !important;
+    }
+}
+
+
