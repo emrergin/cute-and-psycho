@@ -1,6 +1,12 @@
 <script>
     // import Header from '../lib/header.svelte';
     import Form from '../lib/form.svelte';
+    import ArticleList from '../lib/articlelist.svelte'
+    export let data;
+
+    // let rootElement;
+
+    // $: rootElement && rootElement.style.setProperty('--headersize', `200`);
 </script>
 
 <div class="container mt-5">
@@ -26,7 +32,6 @@
         <p> 2020 yılında başladığım Ankara Sosyal Bilimler Üniversitesi Klinik Psikoloji Yüksek isansımı 2022 yılında tamamladım. Yüksek lisans eğitimim dahilinde Bilişsel Davranışçı Terapi eğitimi ve süpervizyon aldım.</p>  
         <p>Klinik alandaki gelişimim için süpervizyon almaya devam ediyorum. Bilişsel Davranışçı Terapinin yanı sıra Kabul Kararlılık Terapisi ve Danışan Odaklı Terapi yaklaşımına ilgi duyuyorum.</p>    
     </div>
-
     <div class="neden">
         <div class="susluyazi hugetext maintitle" id="neden">
             Neden terapi?
@@ -35,16 +40,12 @@
 
         <p>Ayrıca belirgin bir sorun olmadan da kendinizi tanımak, potansiyelinize ulaşmak, genel olarak iyi oluşunuzu artırmak için de terapiye başlanabilir.</p>
     </div>
-    <!-- <div class="insta">
-        <div class="susluyazi hugetext maintitle" id="insta">
-            İnstagram
-        </div>
-    </div> -->
 
     <div class="bloglar">
         <div class="susluyazi hugetext maintitle" id="bloglar">
             Blog Yazıları
         </div>
+        <ArticleList data={data}/>
     </div>
 
     <div class="iletisim">
@@ -74,4 +75,37 @@
         object-fit: cover;
         display: block;
     }
+
+    .hakkimda{
+        background-color:var(--acikpembe);
+    }
+
+    .neden{
+        background-color: var(--acikyesil);
+    }
+
+    .iletisim{
+        background-color: var(--kahve);
+    }
+
+    #iletisim{
+        margin-bottom:0px;
+    }
+
+    #hakkimda,#neden,#iletisim{
+        /* scroll-margin-top: var(--headersize); */
+        scroll-margin-top: 200px;
+    }
+
+    .neden,.hakkimda, .iletisim, .bloglar{
+        padding: 5vw;
+    }
+
+    .greetings{
+        padding-block:5rem;
+        padding-right:max(3vw,1rem);
+        width:48%;
+        /* margin-right:1vw; */
+    }
+
 </style>

@@ -1,4 +1,6 @@
 <div class="form">
+    <p>Bana ulaşmak için aşağıdaki formu kullanabilir veya e-posta yollayabilirsiniz.</p>
+    <p>E-posta adresim: <a href="mailto:psk.senaergin@gmail.com">psk.senaergin@gmail.com</a> </p>
     <label for="name">Adınız</label>
     <input id="name"/>
     <label for="email">E-posta adresiniz</label>

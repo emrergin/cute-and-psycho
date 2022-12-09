@@ -56,8 +56,7 @@
         margin-bottom:2ch;
     }
 
-    .navbar{  
-        
+    .navbar{          
         display:flex;
         justify-content: space-around;
         flex-wrap:wrap;

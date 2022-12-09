@@ -2,16 +2,13 @@
 	import { scale } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
 	import { enhance } from '$app/forms';
-	import ListErrors from '$lib/ListErrors.svelte';
 	export let article;
-	export let errors;
 </script>
 
 <div >
 	<div >
 		<div >
 			<div >
-				<ListErrors {errors} />
 
 				<form use:enhance method="POST">
 					<fieldset >

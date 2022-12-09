@@ -1,6 +1,12 @@
 import type {  Actions } from './$types';
 import { post } from '$lib/api';
 
+export interface Article{
+	title: FormDataEntryValue | null;
+    description: FormDataEntryValue | null;
+    body: FormDataEntryValue | null;
+    tagList: FormDataEntryValue[];
+}
 export const actions: Actions = {
   default: async ({  request }) => {
     const data = await request.formData();
@@ -11,8 +17,8 @@ export const actions: Actions = {
 					tagList: data.getAll('tag')
 				}
 			// });
-	// console.log(article);
-	post({article});
+	// console.log('+',article);
+	post(article);
   
     return { success: true };
   }

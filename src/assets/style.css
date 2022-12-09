@@ -8,6 +8,7 @@
     --kahve: #dcccc0;
     --space: 3rem;
     --yazirenk: #6c6565;
+    /* --headersize: inherit; */
 }
 
 * {
@@ -66,17 +67,6 @@ h2>a, h1>a{
     background-color: var(--bej);
 }
 
-.neden,.hakkimda, .insta, .iletisim, .bloglar{
-    padding: 5vw;
-}
-
-.greetings{
-    padding-block:5rem;
-    padding-right:max(3vw,1rem);
-    width:48%;
-    /* margin-right:1vw; */
-}
-
 .button{
     border:2px var(--yazirenk) solid;
     padding:0.75rem 2rem;
@@ -98,29 +88,6 @@ h2>a, h1>a{
 .maintitle{
     text-align: center;
     margin-bottom: 4rem;
-}
-.hakkimda{
-    background-color:var(--acikpembe);
-}
-
-.neden{
-    background-color: var(--acikyesil);
-}
-
-.insta{
-    background-color: var(--koyubej);
-}
-
-.iletisim{
-    background-color: var(--kahve);
-}
-
-#insta, #iletisim{
-    margin-bottom:0px;
-}
-
-#hakkimda,#neden,#iletisim{
-    scroll-margin-top: 250px;
 }
 
 .bloglar{
