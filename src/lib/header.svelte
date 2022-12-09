@@ -5,16 +5,16 @@
             </a>
 
         <div id="navbarsubsubbox">
-                <a class="navbar-brand" href="#hakkimda">
+                <a class="navbar-brand" href="/#hakkimda">
                     Hakkımda
                 </a>
-                <a class="navbar-brand" href="#neden">
+                <a class="navbar-brand" href="/#neden">
                     Neden Terapi
                 </a>
-                <a class="navbar-brand" href="./posts/">
+                <a class="navbar-brand" href="/posts/">
                     Blog
                 </a>
-                <a class="navbar-brand" href="#iletisim">
+                <a class="navbar-brand" href="/#iletisim">
                     İletişim
                 </a>
         </div>
@@ -50,6 +50,10 @@
         gap: var(--space, 3rem);
         margin-right:var(--space, 2rem);
         align-items: baseline; 
+    }
+
+    #navbarsubsubbox:last-child{
+        margin-bottom:2ch;
     }
 
     .navbar{  

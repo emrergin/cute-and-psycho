@@ -1,13 +1,11 @@
 <script>
-    import Header from '../lib/header.svelte';
+    // import Header from '../lib/header.svelte';
     import Form from '../lib/form.svelte';
 </script>
 
-<Header/>
-
 <div class="container mt-5">
     <div class="imageandtext">
-        <figure class="wp-block-image size-full is-style-default"><img src="/IMG_8812222.jpg" alt="hanimefendinin fotografi"></figure>
+        <figure><img src="/IMG_8812222.jpg" alt="hanimefendinin fotografi"></figure>
         <div class="greetings">
             <p>Merhaba.</p>
 
@@ -16,7 +14,7 @@
             <p>Bu sitede özgeçmişim ve çalıştığım alanlar hakkında bilgi edinebilirsiniz.</p>
 
             <p>Ayrıca ruh sağlığına dair yazılarıma da buradan ulaşabilirsiniz.</p>
-            <div class="button">İletişim</div>
+            <a class="button" href="#iletisim">İletişim</a>
         </div>
     </div>
     <div class="hakkimda">
@@ -37,14 +35,11 @@
 
         <p>Ayrıca belirgin bir sorun olmadan da kendinizi tanımak, potansiyelinize ulaşmak, genel olarak iyi oluşunuzu artırmak için de terapiye başlanabilir.</p>
     </div>
-    <div class="insta">
+    <!-- <div class="insta">
         <div class="susluyazi hugetext maintitle" id="insta">
             İnstagram
         </div>
-        <iframe src="https://www.instagram.com/psk.senaergin" title="instagram_feed" loading="lazy">
-
-        </iframe>
-    </div>
+    </div> -->
 
     <div class="bloglar">
         <div class="susluyazi hugetext maintitle" id="bloglar">
@@ -59,3 +54,24 @@
         <Form/>
     </div>    
 </div>
+
+<style>
+    a.button{
+        text-decoration: none;
+    }
+
+    figure {
+        position: relative;
+        width:48%;
+        overflow: hidden;
+        margin-bottom:0px;
+    }
+
+    figure img {
+        min-height:400px;
+        width: 100%;
+        object-position: center;
+        object-fit: cover;
+        display: block;
+    }
+</style>

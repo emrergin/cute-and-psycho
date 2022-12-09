@@ -28,7 +28,7 @@
     
     button{
         border:2px var(--yazirenk) solid;
-        padding:0.75rem 2rem;
+        padding:0.75rem 4rem;
         display:block;
         margin-inline:auto;
         margin-top:3ch;
@@ -37,6 +37,7 @@
         cursor: pointer;
         transition: all 0.2s ease-in;
         background-color:inherit;
+        font-size: 20px;
 
         align-self: center;
     }
