@@ -52,7 +52,7 @@
         <div class="susluyazi hugetext maintitle" id="iletisim">
             İletişim
         </div>
-        <Form/>
+        <Form message={{name:'',email:'',text:''}}/>
     </div>    
 </div>
 

@@ -6,7 +6,6 @@
     div{
         padding:2em;
         background-color: var(--acikyesil);
-        border-top:2px solid var(--yazirenk);
         text-align: right;
     }
 </style>

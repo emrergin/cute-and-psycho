@@ -1,23 +1,30 @@
-<div class="form">
+<script>
+	// import { scale } from 'svelte/transition';
+	// import { flip } from 'svelte/animate';
+	import { enhance } from '$app/forms';
+	export let message;
+</script>
+
+<form use:enhance method="POST">
     <p>Bana ulaşmak için aşağıdaki formu kullanabilir veya e-posta yollayabilirsiniz.</p>
     <p>E-posta adresim: <a href="mailto:psk.senaergin@gmail.com">psk.senaergin@gmail.com</a> </p>
     <label for="name">Adınız</label>
-    <input id="name"/>
+    <input name="name" id="name" value={message.name}/>
     <label for="email">E-posta adresiniz</label>
-    <input id="name"/>
+    <input name="email" id="email" value={message.name} type="email" />
     <label for="message">Mesajınız</label>
-    <textarea id="message"/>
-    <button type="button">Gönder</button>
-</div>
+    <textarea name="message" id="message" value={message.text}/>
+    <button type="submit">Gönder</button>
+</form>
 
 <style>
 
-    .form>*{
+    form>*{
         /* text-align: center; */
         margin-inline:3vw;
     }
     
-    .form{    
+    form{    
         max-width: 100%;
         display:flex;
         flex-direction: column;

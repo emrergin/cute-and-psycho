@@ -5,11 +5,10 @@
 	export let article;
 </script>
 
-<div >
-	<div >
-		<div >
-			<div >
-
+<div>
+	<div>
+		<div>
+			<div>
 				<form use:enhance method="POST">
 					<fieldset >
 						<input
