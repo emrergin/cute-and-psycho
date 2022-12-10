@@ -12,6 +12,15 @@ export async function post(data:Article) {
 	await blogs.set(uuidv4(),data);
 }
 
+export async function put(key:string,data:Article) {
+	await blogs.set(key,data);
+}
+
+export async function deleteBlog(id:string){
+	await blogs.delete(id);
+}
+
+
 export async function getAll() {
 	const { results: articleMetaData } = await blogs.list();
 
@@ -22,12 +31,15 @@ export async function getAll() {
 	return articles;
 }
 
-export async function deleteBlog(id:string){
-	await blogs.delete(id);
-}
 
 export async function getAdmin(){
 	const admin = await users.get("admin");
 	return admin;
+}
+
+export async function getSingleArticle(key:string){
+	const article = await blogs.get(key);
+	// console.log(article)
+	return article;
 }
 

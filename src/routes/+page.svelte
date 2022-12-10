@@ -1,7 +1,7 @@
 <script>
     // import Header from '../lib/header.svelte';
     import Form from '../lib/form.svelte';
-    import ArticleList from '../lib/articlelist.svelte'
+    import ArticleList from '../lib/articlelist.svelte';
     export let data;
 
     // let rootElement;

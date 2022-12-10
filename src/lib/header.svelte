@@ -1,6 +1,6 @@
 <nav class="navbar">
     <div class="d-flex justify-content-between mw-100" id="navbarsubbox">
-            <a class="susluyazi navbar-brand hugetext" href="./">
+            <a class="susluyazi navbar-brand hugetext" href="/">
                 Sena Ergin
             </a>
 
