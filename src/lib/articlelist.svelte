@@ -4,13 +4,15 @@
 <!-- ${Math.floor(Math.random() * 1084)+1} -->
 <div class="article-list-main">
     {#each data.articles as article}
-        <div class="blog-card">
-            <img src={`https://picsum.photos/seed/${Math.floor(Math.random() * 1084)+1}/200`} alt="random"/>
-            <h2>{article.title}</h2>
-            <p>
-                {article.description}
-            </p>
-        </div>
+        <a href={`/posts/${article.key}`}>
+            <div class="blog-card">
+                <img src={`https://picsum.photos/seed/${Math.floor(Math.random() * 1084)+1}/200`} alt="random"/>
+                <h2>{article.title}</h2>
+                <p>
+                    {article.description}
+                </p>
+            </div>
+        </a>
     {/each}
 </div>
 
