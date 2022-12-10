@@ -1,7 +1,3 @@
-// import { error } from '@sveltejs/kit';
-// import { AWS_REGION,AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY,AWS_SESSION_TOKEN } from '$env/static/private';
-
-
 import CyclicDb from "@cyclic.sh/dynamodb";
 const db = CyclicDb("fragile-galoshes-batCyclicDB");
 import { v4 as uuidv4 } from 'uuid';

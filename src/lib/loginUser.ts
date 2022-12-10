@@ -1,6 +1,7 @@
 import { getAdmin } from "./api";
 import bcrypt from 'bcryptjs';
-import { JWT_ACCESS_SECRET } from '$env/static/private';
+// import { JWT_ACCESS_SECRET } from '$env/static/private';
+import { env } from '$env/dynamic/private';
 import jwt from 'jsonwebtoken';
 
 const loginUser = async (username: string, password: string) => {
@@ -26,7 +27,7 @@ const loginUser = async (username: string, password: string) => {
 		username: "admin"
 	};
 
-	const token = jwt.sign(jwtUser, JWT_ACCESS_SECRET, {
+	const token = jwt.sign(jwtUser, env.JWT_ACCESS_SECRET, {
 		expiresIn: '1d'
 	});
 

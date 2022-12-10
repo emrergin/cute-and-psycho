@@ -45,7 +45,7 @@
         <div class="susluyazi hugetext maintitle" id="bloglar">
             Blog Yazıları
         </div>
-        <ArticleList data={data}/>
+        <ArticleList data={data} count={3}/>
     </div>
 
     <div class="iletisim">

@@ -1,9 +1,11 @@
 <script>
     export let data;
+    export let count;
+    let articles = data.articles.slice(0,count);
 </script>
-<!-- ${Math.floor(Math.random() * 1084)+1} -->
+
 <div class="article-list-main">
-    {#each data.articles as article}
+    {#each articles as article}
         <a href={`/posts/${article.key}`}>
             <div class="blog-card">
                 <img src={`https://picsum.photos/seed/${Math.floor(Math.random() * 1084)+1}/200`} alt="random"/>
@@ -25,9 +27,7 @@
 
     .blog-card{
         padding:2ch;
-        /* border-radius: 18px;
-        background: #fadcd6;
-        box-shadow:  15px 15px 30px #e6cac5,
-                    -15px -15px 30px #ffeee7; */
+        border-radius: 3px;
+        border:2px var(--yazirenk) solid;
     }
 </style>
