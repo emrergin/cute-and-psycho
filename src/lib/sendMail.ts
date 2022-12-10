@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 import { env } from '$env/dynamic/private';
 
 const transporter = nodemailer.createTransport({
-    host: "gmail",
+    host: 'smtp.gmail.com' ,
     port: 587,
     secure: false,
     auth: {
@@ -15,10 +15,11 @@ const transporter = nodemailer.createTransport({
 const sendMail =  async (name: string, email: string, message: string) => {
 
   const mailOptions = {
-      from: email,
+      from: env.EMAIL,
       to: env.EMAIL,
-      subject: `Mesaj-${name}`,
-      text: message
+      subject: `Mesaj-${name}-${email}`,
+      text: message, 
+      replyTo:email     
   };
 
 

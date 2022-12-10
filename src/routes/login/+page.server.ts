@@ -1,5 +1,5 @@
 import { invalid, redirect } from '@sveltejs/kit';
-import * as api from '$lib/api.js';
+// import * as api from '$lib/api.js';
 import type { PageServerLoad, Actions } from './$types';
 import { loginUser } from '$lib/loginUser';
 
@@ -10,7 +10,6 @@ export const load: PageServerLoad = ({ locals }) => {
 	}
 };
 
-/** @type {import('./$types').Actions} */
 export const actions: Actions = {
 	default: async ({ cookies, request }) => {
 		const data = await request.formData();
