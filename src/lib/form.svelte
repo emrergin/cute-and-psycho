@@ -1,8 +1,7 @@
-<script>
-	// import { scale } from 'svelte/transition';
-	// import { flip } from 'svelte/animate';
+<script lang="ts">
 	import { enhance } from '$app/forms';
 	export let message;
+    export let form: ActionData;
 </script>
 
 <form use:enhance method="POST">
@@ -16,11 +15,15 @@
     <textarea name="message" id="message" value={message.text}/>
     <button type="submit">Gönder</button>
 </form>
+		{#if form?.success}
+			<div>
+				Başarıyla gönderildi.
+			</div>
+		{/if}
 
 <style>
 
     form>*{
-        /* text-align: center; */
         margin-inline:3vw;
     }
     

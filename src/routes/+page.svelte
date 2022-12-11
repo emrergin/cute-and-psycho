@@ -4,9 +4,7 @@
     import ArticleList from '../lib/articlelist.svelte';
     export let data;
 
-    // let rootElement;
-
-    // $: rootElement && rootElement.style.setProperty('--headersize', `200`);
+    export let form;
 </script>
 
 <div class="container mt-5">
@@ -52,7 +50,7 @@
         <div class="susluyazi hugetext maintitle" id="iletisim">
             İletişim
         </div>
-        <Form message={{name:'',email:'',text:''}}/>
+        <Form message={{name:'',email:'',text:''}} form={form}/>
     </div>    
 </div>
 

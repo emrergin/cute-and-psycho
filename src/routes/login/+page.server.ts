@@ -1,5 +1,4 @@
 import { invalid, redirect } from '@sveltejs/kit';
-// import * as api from '$lib/api.js';
 import type { PageServerLoad, Actions } from './$types';
 import { loginUser } from '$lib/loginUser';
 
@@ -25,53 +24,9 @@ export const actions: Actions = {
 		}
 
 		const value = btoa(JSON.stringify(token));
-		// console.log(value)
 		cookies.set('jwt', value, { path: '/' });
 
 		throw redirect(307, '/');
 	}
 };
 
-
-
-
-
-// import { redirect, invalid } from '@sveltejs/kit';
-
-
-
-
-// export const actions: Actions = {
-// 	default: async (event) => {
-// 		const formData = Object.fromEntries(await event.request.formData());
-
-// 		if (!formData.username || !formData.password) {
-// 			return invalid(400, {
-// 				error: 'Missing email or password'
-// 			});
-// 		}
-
-// 		const { username, password } = formData as { username: string; password: string };
-
-// 		const { error, token } = await loginUser(username, password);
-
-// 		if (error) {
-// 			return invalid(401, {
-// 				error
-// 			});
-// 		}
-// 		// console.log(token);
-// 		// // Set the cookie
-// 		// event.cookies.set('jwt', `Bearer ${token}`, {
-// 		// 	httpOnly: true,
-// 		// 	path: '/',
-// 		// 	secure: true,
-// 		// 	sameSite: 'strict',
-// 		// 	maxAge: 60 * 60 * 24 // 1 day
-// 		// });
-// 		const value = btoa(JSON.stringify(body.user));
-// 		cookies.set('jwt', value, { path: '/' });
-
-// 		throw redirect(302, '/admin');
-// 	}
-// };
