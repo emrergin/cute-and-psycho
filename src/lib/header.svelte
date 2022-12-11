@@ -81,4 +81,20 @@
         font-size:5rem;
         line-height:3.5ex;
     }
+
+
+
+@media (max-width: 600px) {
+    #navbarsubbox{
+        gap:0.5rem;
+    }
+    #navbarsubbox{
+        justify-content:center;
+    }
+    #navbarsubsubbox{
+        gap:10px;
+        margin-inline: auto;
+    }
+}
+
 </style>

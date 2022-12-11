@@ -43,5 +43,6 @@
         margin-top:4ch;
         margin-inline:auto;
         display:block;
+        max-width:95%;
     }
 </style>

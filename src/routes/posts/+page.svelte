@@ -2,7 +2,7 @@
     export let data;
     import { marked } from 'marked';
     
-    const blogs = data.articles.map(a=>({...a,body:marked(a.body.match( /[^\.!\?]+[\.!\?]+/g ).slice(0,8).join(".").trim())}));
+    const blogs = data.articles.map(a=>({...a,body:marked(a.body.match( /[^\.!\?]+[\.!\?]+/g ).slice(0,8).join("").trim())}));
 
 </script>
 
@@ -41,5 +41,11 @@
         float: left;   
         margin-right:2ch; 
         margin-bottom:1ch;
+    }
+
+    @media (max-width: 600px) {
+        img{
+            float: none;   
+        }
     }
 </style>
