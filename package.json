@@ -17,6 +17,7 @@
 		"@sveltejs/kit": "next",
 		"@types/bcryptjs": "^2.4.2",
 		"@types/jsonwebtoken": "^8.5.9",
+		"@types/marked": "^4.0.8",
 		"@types/nodemailer": "^6.4.6",
 		"@types/uuid": "^9.0.0",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
@@ -35,6 +36,7 @@
 		"@cyclic.sh/dynamodb": "^0.0.32",
 		"bcryptjs": "^2.4.3",
 		"jsonwebtoken": "^8.5.1",
+		"marked": "^4.2.4",
 		"nodemailer": "^6.8.0",
 		"uuid": "^9.0.0"
 	}
