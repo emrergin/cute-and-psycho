@@ -92,7 +92,7 @@
         justify-content:center;
     }
     #navbarsubsubbox{
-        gap:10px;
+        gap:20px;
         margin-inline: auto;
     }
 }

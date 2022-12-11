@@ -9,7 +9,9 @@
 
 <div class="container mt-5">
     <div class="imageandtext">
-        <figure><img src="/IMG_8812222.jpg" alt="hanimefendinin fotografi"></figure>
+        <figure>
+            <img src="/IMG_8812222.jpg" alt="hanimefendinin fotografi">
+        </figure>
         <div class="greetings">
             <p>Merhaba.</p>
 
@@ -63,7 +65,7 @@
         position: relative;
         width:48%;
         overflow: hidden;
-        margin-bottom:0px;
+        margin-bottom:0px;        
     }
 
     figure img {
@@ -72,6 +74,14 @@
         object-position: center;
         object-fit: cover;
         display: block;
+        float:left;
+    }
+
+    .imageandtext{
+        display:flex;
+        gap: min(2vw,2rem);
+        align-items: center;
+        background-color: var(--bej);
     }
 
     .hakkimda{
@@ -103,7 +113,26 @@
         padding-block:5rem;
         padding-right:max(3vw,1rem);
         width:48%;
-        /* margin-right:1vw; */
     }
+
+    @media (max-width: 600px) {
+        figure{
+            margin-left:5px;
+            margin-right:8px;  
+            padding-top:3rem;          
+        }
+        .greetings{
+            padding-top:3rem;
+            font-size:0.9em;
+        }
+        img{
+            float:left;
+        }
+        .imageandtext{
+            gap:3px;
+            align-items:flex-start;
+        }
+    }
+
 
 </style>
