@@ -45,11 +45,16 @@
         float: left;   
         margin-right:2ch; 
         margin-bottom:1ch;
+        max-width:35%;
+        object-position: center;
+        object-fit: cover;
+        min-height:200px;
     }
 
     @media (max-width: 600px) {
         img{
-            float: none;   
+            float: none;
+            max-width:95%;   
         }
     }
 </style>

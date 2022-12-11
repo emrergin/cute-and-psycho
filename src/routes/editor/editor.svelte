@@ -86,8 +86,9 @@
 
 <style>
 .editor-container{
-	max-width:80ch;
-	width:33%;	
+	width:80ch;
+	max-width:100%;
+	/* width:33%;	 */
 }
 
 form{
