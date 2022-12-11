@@ -58,4 +58,16 @@
         color:var(--kahve);
         background-color: var(--yazirenk);
     }
+
+    input{
+        padding-block:0.75ch;
+    }
+
+    input:focus{
+        outline:2px #628e73 solid;
+    }
+
+    textarea:focus{
+        outline:2px #628e73 solid;
+    }
 </style>
