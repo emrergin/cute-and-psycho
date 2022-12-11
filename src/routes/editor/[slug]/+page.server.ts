@@ -21,7 +21,8 @@ export const actions:Actions = {
             title: data.get('title'),
             description: data.get('description'),
             body: data.get('body'),
-            tagList: data.getAll('tag')
+            tagList: data.getAll('tag'),
+			image: data.get('imageLink')
         }
 		await api.put(params.slug,article);
 

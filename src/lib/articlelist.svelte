@@ -8,7 +8,11 @@
     {#each articles as article}
         <a href={`/posts/${article.key}`}>
             <div class="blog-card">
-                <img src={`https://picsum.photos/seed/${Math.floor(Math.random() * 1084)+1}/300`} alt="random"/>
+                {#if data.image}
+                    <img src={data.image} alt="Makalenin resmi."/> 
+                {:else}         
+                    <img src={`https://picsum.photos/seed/${Math.floor(Math.random() * 1084)+1}/300`} alt="Güzel bir resim."/>
+                {/if}
                 <h2>{article.title}</h2>
                 <p>
                     {article.description}

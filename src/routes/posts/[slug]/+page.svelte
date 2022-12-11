@@ -1,31 +1,23 @@
 <script>
     export let data;
     import { marked } from 'marked';
-	// console.log(data);
-    // const blog = {...data,body:data.body.split("\r\n").filter(a=>a!=='')};
-    // const blog = {...data,body:marked(data.body)};
-    // const blogs = data.articles.map(a=>({...a,body:((a.body.split(".").slice(0,8).join("."))+'.').split("\r\n").filter(a=>a!=='')}));
-    // console.log(blogs);
     $: markup = marked(data.body);
 </script>
 
 <div class="blog-preview">
-    <!-- {#each blogs as article (article.slug)} -->
-        <!-- <div class="blog-preview"> -->
-            <img src={`https://picsum.photos/id/${Math.floor(Math.random() * 1084)+1}/500`} alt="random"/>
-            <h2>{data.title}</h2>
-            <h3>
-                {data.description}
-            </h3>
-            <div>
-                <!-- {#each blog.body as paragraph}
-                <p>{paragraph}</p> 
-                {/each} -->
-                {@html markup}
-            </div>
-            <!-- <a href={`/posts/${blog.key}`}>Devamını oku.</a> -->
-        <!-- </div> -->
-    <!-- {/each} -->
+    {#if data.image}
+        <img src={data.image} alt="Makalenin resmi."/> 
+    {:else}         
+        <img src={`https://picsum.photos/id/${Math.floor(Math.random() * 1084)+1}/500`} alt="Güzel bir resim."/>
+    {/if}
+    
+    <h2>{data.title}</h2>
+    <h3>
+        {data.description}
+    </h3>
+    <div>
+        {@html markup}
+    </div>
 </div>
 
 <style>

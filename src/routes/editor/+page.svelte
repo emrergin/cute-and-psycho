@@ -8,6 +8,7 @@
 		title: '',
 		description: '',
 		body: '',
+		image: '',
 		tagList: []
 	}}
 	errors={form?.errors}

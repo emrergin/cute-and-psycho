@@ -9,7 +9,11 @@
 <div>
     {#each blogs as article (article.slug)}
         <div class="blog-preview">
-            <img src={`https://picsum.photos/id/${Math.floor(Math.random() * 1084)+1}/200`} alt="Burada güzel bir resim olduğunu düşün."/>
+            {#if article.image}
+                <img src={article.image} alt="Makalenin resmi."/> 
+            {:else}
+                <img src={`https://picsum.photos/id/${Math.floor(Math.random() * 1084)+1}/200`} alt="Güzel bir resim."/>            
+            {/if}
             <a href={`/posts/${article.key}`} class="title-link"><h2>{article.title}</h2></a>
             <h3>
                 {article.description}

@@ -12,6 +12,7 @@ export interface Article{
     description: FormDataEntryValue | null;
     body: FormDataEntryValue | null;
     tagList: FormDataEntryValue[];
+	image: FormDataEntryValue | null;
 }
 export const actions: Actions = {
   default: async ({  locals, request }) => {
@@ -21,7 +22,8 @@ export const actions: Actions = {
 					title: data.get('title'),
 					description: data.get('description'),
 					body: data.get('body'),
-					tagList: data.getAll('tag')
+					tagList: data.getAll('tag'),
+					image: data.get('imageLink')
 				}
 	post(article);
   
