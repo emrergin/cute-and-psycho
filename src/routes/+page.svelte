@@ -1,16 +1,16 @@
 <script>
-    // import Header from '../lib/header.svelte';
     import Form from '../lib/form.svelte';
     import ArticleList from '../lib/articlelist.svelte';
-    export let data;
+    import sena from '../assets/IMG_8812222.jpg';
 
+    export let data;
     export let form;
 </script>
 
 <div class="container mt-5">
     <div class="imageandtext">
         <figure>
-            <img src="/IMG_8812222.jpg" alt="hanimefendinin fotografi">
+            <img src={sena} alt="hanimefendinin fotografi">
         </figure>
         <div class="greetings">
             <p>Merhaba.</p>

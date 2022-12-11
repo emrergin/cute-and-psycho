@@ -12,3 +12,4 @@ Technically, the site uses **SvelteKit** for both front end back end. Deployment
 - https://www.okupter.com/blog/handling-auth-with-jwt-in-sveltekit
 - https://johanronsse.be/2022/09/11/sveltekit-form-actions-are-the-bomb/
 - https://stackoverflow.com/questions/11761563/javascript-regexp-for-splitting-text-into-sentences-and-keeping-the-delimiter
+- https://pagespeedchecklist.com/asynchronous-google-fonts#all-together
