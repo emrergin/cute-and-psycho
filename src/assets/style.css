@@ -23,7 +23,7 @@ body{
     max-width: 100%;
     min-height:100vh;
     flex-direction:column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin:0px;
     padding:0px;
     background-color: var(--acikbej);

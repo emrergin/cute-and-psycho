@@ -2,19 +2,18 @@
     export let data;
     import { marked } from 'marked';
     
-    const blogs = data.articles.map(a=>({...a,body:marked(a.body.split(".").slice(0,8).join(".")+'.')}));
-    // console.log(blogs);
-    // $: markup = marked(data.body.split(".").slice(0,8).join(".")+'.');
+    const blogs = data.articles.map(a=>({...a,body:marked(a.body.match( /[^\.!\?]+[\.!\?]+/g ).slice(0,8).join(".").trim())}));
+
 </script>
 
 <div>
     {#each blogs as article (article.slug)}
         <div class="blog-preview">
-            <img src={`https://picsum.photos/id/${Math.floor(Math.random() * 1084)+1}/200`} alt="random"/>
+            <img src={`https://picsum.photos/id/${Math.floor(Math.random() * 1084)+1}/200`} alt="Burada güzel bir resim olduğunu düşün."/>
             <a href={`/posts/${article.key}`} class="title-link"><h2>{article.title}</h2></a>
-            <h4>
+            <h3>
                 {article.description}
-            </h4>
+            </h3>
             <div>
                 {@html article.body}
             </div>
@@ -26,6 +25,7 @@
 <style>
     .blog-preview{
         padding:3ch;
+        padding-top:8ch;
         max-width:80ch;
         background-color: rgb(255, 252, 249);
         color: #615d5d;
@@ -35,5 +35,11 @@
     }
     .title-link{
         text-decoration: none;
+    }
+
+    img{
+        float: left;   
+        margin-right:2ch; 
+        margin-bottom:1ch;
     }
 </style>

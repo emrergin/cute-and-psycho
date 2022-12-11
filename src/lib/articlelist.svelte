@@ -8,7 +8,7 @@
     {#each articles as article}
         <a href={`/posts/${article.key}`}>
             <div class="blog-card">
-                <img src={`https://picsum.photos/seed/${Math.floor(Math.random() * 1084)+1}/200`} alt="random"/>
+                <img src={`https://picsum.photos/seed/${Math.floor(Math.random() * 1084)+1}/300`} alt="random"/>
                 <h2>{article.title}</h2>
                 <p>
                     {article.description}
@@ -19,15 +19,32 @@
 </div>
 
 <style>
+    a{
+        text-decoration: none;
+        width:30%;
+    }
+
     .article-list-main{
         display:flex;
         gap:2ch;
         justify-content: space-evenly;
+        flex-wrap:wrap
     }
 
     .blog-card{
         padding:2ch;
         border-radius: 3px;
-        border:2px var(--yazirenk) solid;
+        background-color: rgb(255, 252, 249);
+    }
+
+    img{
+        display:block;
+        width:100%;
+    }
+
+    @media (max-width: 600px) {
+        a{
+            width:90%;
+        }
     }
 </style>

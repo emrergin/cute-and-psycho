@@ -7,5 +7,6 @@
         padding:2em;
         background-color: var(--acikyesil);
         text-align: right;
+        margin-top: auto;
     }
 </style>
