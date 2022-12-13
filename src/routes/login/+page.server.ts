@@ -26,7 +26,7 @@ export const actions: Actions = {
 		const value = btoa(JSON.stringify(token));
 		cookies.set('jwt', value, { path: '/' });
 
-		throw redirect(307, '/');
+		throw redirect(307, '/admin');
 	}
 };
 

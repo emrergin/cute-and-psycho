@@ -1,6 +1,6 @@
 import CyclicDb from "@cyclic.sh/dynamodb";
 const db = CyclicDb("fragile-galoshes-batCyclicDB");
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 
 import type { Article } from 'src/routes/editor/+page.server';
 
@@ -9,7 +9,7 @@ const blogs = db.collection("blogs");
 const users = db.collection("users");
 
 export async function post(data:Article) {
-	await blogs.set(uuidv4(),data);
+	await blogs.set(crypto.randomUUID(),data);
 }
 
 export async function put(key:string,data:Article) {

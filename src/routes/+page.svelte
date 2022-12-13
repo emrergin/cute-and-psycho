@@ -1,7 +1,7 @@
 <script>
     import Form from '../lib/form.svelte';
     import ArticleList from '../lib/articlelist.svelte';
-    import sena from '../assets/IMG_8812222.jpg';
+    import sena from '$lib/assets/IMG_8812222.jpg';
 
     export let data;
     export let form;

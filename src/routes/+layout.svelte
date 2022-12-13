@@ -1,14 +1,8 @@
 <script>
-	// import { navigating } from '$app/stores';
 	import Header from '../lib/header.svelte';
-    import '../assets/style.css';
+    import '../lib/assets/style.css';
     import Footer from '../lib/footer.svelte';
-	// import PreloadingIndicator from './PreloadingIndicator.svelte';
 </script>
-
-<!-- {#if $navigating}
-	<PreloadingIndicator />
-{/if} -->
 
 <Header />
 
