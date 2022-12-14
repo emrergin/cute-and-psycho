@@ -11,6 +11,23 @@
     /* --headersize: inherit; */
 }
 
+@font-face {
+    font-family: Epilogue;
+    src: url(/fonts/Epilogue/Epilogue-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Epilogue;
+    src: url(/fonts/Epilogue/Epilogue-Italic-VariableFont_wght.ttf);
+    font-style: italic;
+  }
+  
+
+@font-face {
+    font-family: Sacramento;
+    src: url(/fonts/Sacramento/Sacramento-Regular.ttf);
+}
+
 * {
     /* outline: 2px solid red; */
     box-sizing: border-box;
