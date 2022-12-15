@@ -1,4 +1,4 @@
-import { invalid, redirect } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 import type { PageServerLoad, Actions } from './$types';
 import { loginUser } from '$lib/loginUser';
 
@@ -20,7 +20,7 @@ export const actions: Actions = {
 
 
 		if (error) {
-			return invalid(401, {error});
+			return fail(401, {error});
 		}
 
 		const value = btoa(JSON.stringify(token));

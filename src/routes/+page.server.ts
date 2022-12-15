@@ -1,6 +1,5 @@
 import * as api from '$lib/api';
 import type {  Actions } from './$types';
-import { error } from '@sveltejs/kit';
 import sendMail from '$lib/sendMail';
 
 export async function load() {
@@ -12,8 +11,7 @@ export async function load() {
 }
 
 export const actions: Actions = {
-	default: async ({  locals, request }) => {
-		// if (!locals.user) throw error(401);
+	default: async ({  request }) => {
 		const data = await request.formData();
 		const posta = {	
 					name: data.get('name'),

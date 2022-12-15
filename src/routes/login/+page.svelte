@@ -13,7 +13,16 @@
 
 
 <section>
-	<form use:enhance>
+	<form method="POST" use:enhance={({ form, data, action, cancel }) => {
+	
+		return async ({ result, update }) => {	
+			if(notice){notice.style.visibility = "visible"};
+			setTimeout(() => {
+				notice.style.visibility = "hidden";
+			}, 4000);	  
+		  update();
+		};
+	  }}>
 		<div>
 			<label for="username">Kullanıcı Adı:</label>
 			<input name="username" id="username" required />
@@ -29,8 +38,10 @@
 		</div>
 
 		{#if form?.error}
-			<div class="notice">
-				{form.error}
+			<div class="notice" bind:this={notice}>
+				<div class="notice-text">
+					<b>{form.error}</b>
+				</div>
 			</div>
 		{/if}
 	</form>
@@ -67,12 +78,17 @@ input:focus{
 
 .notice{
 	position:absolute;
-	color:red;
+	/* color:red; */
 	top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%,-50%);
+	left: 50%;
 	background-color: rgb(255, 252, 249);
 	width:100%;
 	height:100%;
+}
+
+.notice-text{
+	margin-inline:auto;
 }
 
 </style>

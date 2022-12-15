@@ -22,7 +22,7 @@
 </form>
     {#if form?.success}
     <div>
-        Başarıyla gönderildi.
+        Başarıyla gönderildi. Çok yakında size döneceğim.
     </div>
     {/if}
 
