@@ -13,15 +13,16 @@ export async function load() {
 
 export const actions: Actions = {
 	default: async ({  locals, request }) => {
-		if (!locals.user) throw error(401);
+		// if (!locals.user) throw error(401);
 		const data = await request.formData();
 		const posta = {	
 					name: data.get('name'),
 					email: data.get('email'),
-					message: data.get('message')
+					message: data.get('message'),
+					phone: data.get('phone')
 				}
 	//   sendEmail(posta);
-		sendMail(posta.name as string,posta.email as string,posta.message as string);
+		await sendMail(posta.name as string,posta.email as string,posta.message as string,posta.phone as string);
 	
 		return { success: true };
 	}

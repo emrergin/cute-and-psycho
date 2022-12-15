@@ -12,13 +12,13 @@ const transporter = nodemailer.createTransport({
     pool: true,
 });
 
-const sendMail =  async (name: string, email: string, message: string) => {
+const sendMail =  async (name: string, email: string, message: string,phone:string) => {
 
   const mailOptions = {
       from: env.EMAIL,
       to: env.EMAIL,
       subject: `Mesaj-${name}-${email}`,
-      text: message, 
+      text: message+'\n\nTelefon numarası: '+phone, 
       replyTo:email     
   };
 

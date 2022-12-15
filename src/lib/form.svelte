@@ -4,26 +4,37 @@
     export let form: ActionData;
 </script>
 
+<p>Bana ulaşmak için aşağıdaki formu kullanabilir veya e-posta yollayabilirsiniz.</p>
+<p>E-posta adresim: <a href="mailto:psk.senaergin@gmail.com">psk.senaergin@gmail.com</a> </p>
+
 <form use:enhance method="POST">
-    <p>Bana ulaşmak için aşağıdaki formu kullanabilir veya e-posta yollayabilirsiniz.</p>
-    <p>E-posta adresim: <a href="mailto:psk.senaergin@gmail.com">psk.senaergin@gmail.com</a> </p>
+
     <label for="name">Adınız</label>
-    <input name="name" id="name" value={message.name}/>
+    <input required name="name" id="name" value={message.name}/>
     <label for="email">E-posta adresiniz</label>
-    <input name="email" id="email" value={message.name} type="email" />
+    <input required name="email" id="email" value={message.email} type="email" />
+    <label for="phone">Telefon Numaranız</label>
+    <input required name="phone" id="phone" value={message.phone} type="tel" />
     <label for="message">Mesajınız</label>
-    <textarea name="message" id="message" value={message.text}/>
+    <textarea required name="message" id="message" value={message.text}/>
     <button type="submit">Gönder</button>
+
 </form>
-		{#if form?.success}
-			<div>
-				Başarıyla gönderildi.
-			</div>
-		{/if}
+    {#if form?.success}
+    <div>
+        Başarıyla gönderildi.
+    </div>
+    {/if}
+
 
 <style>
 
     form>*{
+        margin-inline:3vw;
+        border-radius:3px;
+    }
+
+    div,p{
         margin-inline:3vw;
     }
     
