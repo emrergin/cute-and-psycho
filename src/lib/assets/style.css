@@ -107,3 +107,13 @@ h2>a, h1>a{
 .bloglar{
     background-color: var(--pembe);
 }
+
+@media (max-width: 450px) {
+    .hugetext{
+        font-size:16vw !important;
+    }
+
+    .maintitle{
+        margin-bottom: 2rem;
+    }
+}

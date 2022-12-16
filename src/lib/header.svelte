@@ -123,6 +123,4 @@
         max-height:134px;
     }
 }
-
-
 </style>
