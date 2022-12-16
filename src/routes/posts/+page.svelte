@@ -7,7 +7,7 @@
 </script>
 
 <div>
-    {#each blogs as article (article.slug)}
+    {#each blogs as article (article.key)}
         <div class="blog-preview">
             {#if article.image}
                 <img src={article.image} alt="Makalenin resmi."/> 
