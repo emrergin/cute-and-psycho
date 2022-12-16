@@ -88,11 +88,6 @@
         font-family: 'Sacramento', cursive;
     }
 
-    .hugetext{
-        font-size:5rem;
-        line-height:3.5ex;
-    }
-
     svg{
         /* display:block; */
         margin-bottom: 0px;
@@ -121,6 +116,16 @@
     #banner-name{
         padding-bottom:1rem;
         max-height:134px;
+    }
+}
+
+@media (max-width: 450px) {
+    .hugetext{
+        font-size:16vw;
+    }
+
+    .maintitle{
+        margin-bottom: 2rem;
     }
 }
 </style>

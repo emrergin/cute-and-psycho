@@ -110,7 +110,7 @@ h2>a, h1>a{
 
 @media (max-width: 450px) {
     .hugetext{
-        font-size:16vw !important;
+        font-size:16vw;
     }
 
     .maintitle{
