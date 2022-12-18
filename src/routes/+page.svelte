@@ -1,138 +1,29 @@
-<script>
-    import Form from '../lib/form.svelte';
-    import ArticleList from '../lib/articlelist.svelte';
-    import sena from '$lib/assets/IMG_8812222.jpg';
+<script>  
+    import Hakkimda from '../lib/mainPageComponents/Hakkimda.svelte';
+    import Greetings from '../lib/mainPageComponents/Greetings.svelte';
+    import Neden from '../lib/mainPageComponents/Neden.svelte';
+    import Bloglar from '../lib/mainPageComponents/Bloglar.svelte';
+    import Iletisim from '../lib/mainPageComponents/Iletisim.svelte'; 
+
+    import AnimatedComponent from '../lib/mainPageComponents/AnimatedComponent.svelte';
+    
+    
 
     export let data;
-    export let form;
 </script>
 
 <div class="container mt-5">
-    <div class="imageandtext">
-        <figure>
-            <img src={sena} alt="hanimefendinin fotografi">
-        </figure>
-        <div class="greetings">
-            <p>Merhaba.</p>
-
-            <p>Ben Klinik Psikolog Sena Ergin.</p>
-
-            <p>Bu sitede özgeçmişim ve çalıştığım alanlar hakkında bilgi edinebilirsiniz.</p>
-
-            <p>Ayrıca ruh sağlığına dair yazılarıma da buradan ulaşabilirsiniz.</p>
-            <a class="button" href="#iletisim">İletişim</a>
-        </div>
-    </div>
-    <div class="hakkimda">
-        <div class="susluyazi hugetext maintitle"  id="hakkimda">
-            Hakkımda
-        </div>
-        <p>İstanbul Üniversitesi Psikoloji bölümünden 2016 yılında mezun oldum. Lisans eğitimim boyunca çeşitli hastane ve anaokullarında staj yaptım.</p>   
-        <p>Mezuniyetimin sonrasında iki sene Hollanda Maastricht Üniversitesi Beyin ve Duygu Laboratuarında stajyer araştırmacı olarak araştırmalarda yer aldım.</p>   
-        <p>2020 yılında başladığım Ankara Sosyal Bilimler Üniversitesi Klinik Psikoloji Yüksek lisansımı 2022 yılında tamamladım. Yüksek lisans eğitimim dahilinde Bilişsel Davranışçı Terapi eğitimi ve süpervizyon aldım.</p>  
-        <p>Klinik alandaki gelişimim için süpervizyon almaya devam ediyorum. Bilişsel Davranışçı Terapinin yanı sıra Kabul Kararlılık Terapisi ve Danışan Odaklı Terapi yaklaşımına ilgi duyuyorum.</p>    
-    </div>
-    <div class="neden">
-        <div class="susluyazi hugetext maintitle" id="neden">
-            Neden terapi?
-        </div>
-        <p>Terapi depresyon, kaygı, yoğun stres, ilişkilerden kaynaklı sorunlar, sınır koymada zorluklar vb gibi durumlarda size yardımcı olur.</p>
-
-        <p>Ayrıca belirgin bir sorun olmadan da kendinizi tanımak, potansiyelinize ulaşmak, genel olarak iyi oluşunuzu artırmak için de terapiye başlanabilir.</p>
-    </div>
-
-    <div class="bloglar">
-        <div class="susluyazi hugetext maintitle" id="bloglar">
-            Blog Yazıları
-        </div>
-        <ArticleList data={data} count={3}/>
-    </div>
-
-    <div class="iletisim">
-        <div class="susluyazi hugetext maintitle" id="iletisim">
-            İletişim
-        </div>
-        <Form message={{name:'',email:'',text:'',phone:''}} form={form}/>
-    </div>    
+    <Greetings/>
+    <AnimatedComponent>
+        <Hakkimda/>
+    </AnimatedComponent>
+    <AnimatedComponent>
+        <Neden/>
+    </AnimatedComponent>
+    <AnimatedComponent>
+        <Bloglar data={data}/>
+    </AnimatedComponent>
+    <AnimatedComponent>
+        <Iletisim/> 
+    </AnimatedComponent>
 </div>
-
-<style>
-    a.button{
-        text-decoration: none;
-    }
-
-    figure {
-        position: relative;
-        width:48%;
-        overflow: hidden;
-        margin-bottom:0px;        
-    }
-
-    figure img {
-        min-height:400px;
-        width: 100%;
-        object-position: center;
-        object-fit: cover;
-        display: block;
-        float:left;
-    }
-
-    .imageandtext{
-        display:flex;
-        gap: min(2vw,2rem);
-        align-items: center;
-        background-color: var(--bej);
-    }
-
-    .hakkimda{
-        background-color:var(--acikpembe);
-    }
-
-    .neden{
-        background-color: var(--acikyesil);
-    }
-
-    .iletisim{
-        background-color: var(--kahve);
-    }
-
-    #iletisim{
-        margin-bottom:0px;
-    }
-
-    #hakkimda,#neden,#iletisim{
-        /* scroll-margin-top: var(--headersize); */
-        scroll-margin-top: 200px;
-    }
-
-    .neden,.hakkimda, .iletisim, .bloglar{
-        padding: 5vw;
-    }
-
-    .greetings{
-        padding-block:5rem;
-        padding-right:max(3vw,1rem);
-        width:48%;
-    }
-
-    @media (max-width: 600px) {
-        figure{
-            margin-left:5px;
-            margin-right:8px;  
-            padding-top:3rem;          
-        }
-        .greetings{
-            padding-top:3rem;
-            font-size:0.9em;
-        }
-        img{
-            float:left;
-        }
-        .imageandtext{
-            gap:3px;
-            align-items:flex-start;
-        }
-    }
-
-
-</style>

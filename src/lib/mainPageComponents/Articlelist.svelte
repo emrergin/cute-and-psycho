@@ -1,7 +1,17 @@
 <script>
+    // import { inview } from 'svelte-inview';
+    let isInView;
+
     export let data;
     export let count;
     let articles = data.articles.slice(0,count);
+
+    // const options = {
+    //     rootMargin: '50px',
+    //     unobserveOnEnter: true,
+    // };
+
+    // const handleChange = ({ detail }) => (isInView = detail.inView);
 </script>
 
 <div class="article-list-main">
