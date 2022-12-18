@@ -1,3 +1,10 @@
+<script>
+    import { page } from '$app/stores';
+
+    let isPost;
+    $: isPost = $page.url.pathname.indexOf("/posts")>-1;
+</script>
+
 <nav class="navbar">
     <div id="navbarsubbox">
             <a class="susluyazi navbar-brand hugetext" id="banner-name" href="/">
@@ -11,10 +18,10 @@
                 <a class="navbar-brand invis-when-small" href="/#neden">
                     Neden Terapi
                 </a>
-                <a class="navbar-brand" href="/posts/">
+                <a class={isPost ? "navbar-brand invis-when-small"  : 'navbar-brand'} href="/posts/">
                     Blog
                 </a>
-                <a class="navbar-brand invis-when-small" href="/#iletisim">
+                <a  class={!isPost ? "navbar-brand invis-when-small"  : 'navbar-brand'} href="/#iletisim">
                     İletişim
                 </a>
                 <a id="instagram-link" aria-label="İnstagram gönderilerim" href="https://www.instagram.com/psk.senaergin/" target="_blank" rel="noreferrer">
@@ -94,7 +101,6 @@
     }
 
     svg{
-        /* display:block; */
         margin-bottom: 0px;
         vertical-align:middle;
     }
