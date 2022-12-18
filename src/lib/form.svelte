@@ -25,6 +25,11 @@
         Başarıyla gönderildi. Çok yakında size döneceğim.
     </div>
     {/if}
+    {#if form?.error}
+    <div>
+        Gönderilemedi. Lütfen tekrar deneyin.
+    </div>
+    {/if}
 
 
 <style>

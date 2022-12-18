@@ -19,9 +19,7 @@ export const actions: Actions = {
 					message: data.get('message'),
 					phone: data.get('phone')
 				}
-	//   sendEmail(posta);
-		await sendMail(posta.name as string,posta.email as string,posta.message as string,posta.phone as string);
-	
-		return { success: true };
+		const mailResult = await sendMail(posta.name as string,posta.email as string,posta.message as string,posta.phone as string);
+		return mailResult;
 	}
 };

@@ -22,15 +22,14 @@ const sendMail =  async (name: string, email: string, message: string,phone:stri
       replyTo:email     
   };
 
+  const res = await transporter.sendMail(mailOptions);
 
-  transporter.sendMail(mailOptions, function(error, info){
-      if (error) {
-    console.log(error);
-      } else {
-        console.log('Email sent: ' + info.response);
-        // do something useful
-      }
-  });
+  if(res.response.slice(0,3)==='250'){
+    return {success: true};
+  }
+  else{
+    return {error: true};
+  }
 }
 
 export default sendMail;
