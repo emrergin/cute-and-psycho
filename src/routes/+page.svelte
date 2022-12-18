@@ -6,9 +6,8 @@
     import Iletisim from '../lib/mainPageComponents/Iletisim.svelte'; 
 
     import AnimatedComponent from '../lib/mainPageComponents/AnimatedComponent.svelte';
-    
-    
 
+    export let form; 
     export let data;
 </script>
 
@@ -24,6 +23,6 @@
         <Bloglar data={data}/>
     </AnimatedComponent>
     <AnimatedComponent>
-        <Iletisim/> 
+        <Iletisim form={form}/> 
     </AnimatedComponent>
 </div>

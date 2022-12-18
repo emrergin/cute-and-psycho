@@ -11,7 +11,7 @@
 
     <label for="name">Adınız</label>
     <input required name="name" id="name" value={message.name}/>
-    <label for="email">E-posta adresiniz</label>
+    <label for="email">E-posta Adresiniz</label>
     <input required name="email" id="email" value={message.email} type="email" />
     <label for="phone">Telefon Numaranız</label>
     <input required name="phone" id="phone" value={message.phone} type="tel" />
