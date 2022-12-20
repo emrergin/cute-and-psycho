@@ -4,8 +4,11 @@
     export let form: ActionData;
 </script>
 
+<p>Yüz yüze veya online görüşme için iletişime geçebilirsiniz. Yüz yüze görüşmeleri Bolu Merkez'de yapıyoruz.</p>
 <p>Bana ulaşmak için aşağıdaki formu kullanabilir veya e-posta yollayabilirsiniz.</p>
 <p>E-posta adresim: <a href="mailto:psk.senaergin@gmail.com">psk.senaergin@gmail.com</a> </p>
+
+
 
 <form use:enhance method="POST">
 

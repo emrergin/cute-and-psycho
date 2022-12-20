@@ -3,8 +3,7 @@
     import Greetings from '../lib/mainPageComponents/Greetings.svelte';
     import Neden from '../lib/mainPageComponents/Neden.svelte';
     import Bloglar from '../lib/mainPageComponents/Bloglar.svelte';
-    import Iletisim from '../lib/mainPageComponents/Iletisim.svelte'; 
-
+    import Iletisim from '../lib/mainPageComponents/Iletisim.svelte';
     import AnimatedComponent from '../lib/mainPageComponents/AnimatedComponent.svelte';
 
     export let form; 
