@@ -1,5 +1,5 @@
 <div>
-    <a href="https://emre-ergin.netlify.app/" target="_blank" rel="noreferrer"><b>Emre Ergin</b></a> tarafından, aşk ile yapılmıştır.
+    <a href="https://emre-ergin.vercel.app/" target="_blank" rel="noreferrer"><b>Emre Ergin</b></a> tarafından, aşk ile yapılmıştır.
 </div>
 
 <style>
