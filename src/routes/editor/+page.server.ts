@@ -8,22 +8,22 @@ export const load: PageServerLoad = async function ({ locals }) {
 }
 
 export interface Article{
-	title: FormDataEntryValue | null;
-    description: FormDataEntryValue | null;
-    body: FormDataEntryValue | null;
-    tagList: FormDataEntryValue[];
-	image: FormDataEntryValue | null;
+	title: string | null;
+  description: string | null;
+  body: string | null;
+  tagList: string[]; 
+	image: string | null;
 }
 export const actions: Actions = {
   default: async ({  locals, request }) => {
 	if (!locals.user) throw error(401);
     const data = await request.formData();
-	const article = {	
-					title: data.get('title'),
-					description: data.get('description'),
-					body: data.get('body'),
-					tagList: data.getAll('tag'),
-					image: data.get('imageLink')
+	const article:Article = {	
+					title: data.get('title') as string,
+					description: data.get('description') as string,
+					body: data.get('body') as string,
+					tagList: data.getAll('tag') as string[],
+					image: data.get('imageLink') as string
 				}
 	post(article);
   

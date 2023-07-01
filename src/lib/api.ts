@@ -1,8 +1,7 @@
 import CyclicDb from "@cyclic.sh/dynamodb";
 const db = CyclicDb("fragile-galoshes-batCyclicDB");
-// import { v4 as uuidv4 } from 'uuid';
 
-import type { Article } from 'src/routes/editor/+page.server';
+import type { Article } from '../routes/editor/+page.server';
 
 
 const blogs = db.collection("blogs");
