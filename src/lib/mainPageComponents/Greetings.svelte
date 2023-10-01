@@ -1,5 +1,17 @@
 <script>
   import sena from "$lib/assets/IMG_8812222.jpg";
+
+  // (function () {
+  //   var target = document.currentScript;
+  //   window.addEventListener("load", function () {
+  //     calendar.schedulingButton.load({
+  //       url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1GcObmeJWrrDuFor1n-xpb96fJG2Z7zPDIEbSXgdniwX0yVBXmL8kjPv6Sny_gc_JxdAaplazk?gv=true",
+  //       color: "#039BE5",
+  //       label: "Randevu oluşturun",
+  //       target,
+  //     });
+  //   });
+  // })();
 </script>
 
 <div class="imageandtext">

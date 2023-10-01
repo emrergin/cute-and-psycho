@@ -9,6 +9,7 @@
       <a class="navbar-brand invis-when-small" href="/#neden"> Neden Terapi </a>
       <a class="navbar-brand invis-when-small" href="/posts/"> Blog </a>
       <a class="navbar-brand" href="/#iletisim"> İletişim </a>
+      <a class="navbar-brand invis-when-small" href="/#randevu"> Randevu </a>
       <a
         id="instagram-link"
         aria-label="İnstagram gönderilerim"
