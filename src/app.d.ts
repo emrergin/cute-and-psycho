@@ -2,14 +2,11 @@
 // for information about these interfaces
 // and what to do when importing types
 declare namespace App {
-	// interface Error {}
-	interface Locals {
-		user:{
-			username: "string"
-		}
-	}
-	// interface PageData {}
-	// interface Platform {}
+  interface Locals {
+    user: {
+      username: "string";
+    };
+  }
 }
 
-declare module '@cyclic.sh/dynamodb';
+declare module "@cyclic.sh/dynamodb";
