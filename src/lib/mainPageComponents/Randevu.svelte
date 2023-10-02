@@ -15,15 +15,9 @@
     height: 800px;
   }
 
-  @media (max-width: 500px) {
+  @media (orientation: portrait) {
     .randevu {
-      height: 970px;
-    }
-  }
-
-  @media (max-width: 647px) {
-    .randevu {
-      height: 1070px;
+      height: 1200px;
     }
   }
 </style>
