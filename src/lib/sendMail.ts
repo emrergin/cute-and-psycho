@@ -18,7 +18,18 @@ const sendMail = async (
   message: string,
   phone: string
 ) => {
-  const listOfBannedWords = ["seo", "business", "your website"];
+  const listOfBannedWords = [
+    "seo",
+    "business",
+    "website",
+    "followers",
+    "service",
+    "offer",
+    "offers",
+    "click",
+    "free",
+    "growth",
+  ];
 
   function checkBannedWords(
     listOfWords: string[],
