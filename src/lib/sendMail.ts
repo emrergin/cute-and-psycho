@@ -23,10 +23,12 @@ const sendMail = async (
   message: string,
   phone: string
 ) => {
-  if (
-    lngDetector.detect(message)[0][0] !== "turkish" &&
-    lngDetector.detect(message)[0][1] > 0.5
-  ) {
+  const detection = lngDetector
+    .detect(message)
+    .slice(0, 5)
+    .map((a) => a[0]);
+
+  if (!detection.includes("turkish")) {
     return;
   }
   const mailOptions = {
