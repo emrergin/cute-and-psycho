@@ -1,11 +1,6 @@
 import nodemailer from "nodemailer";
 import { env } from "$env/dynamic/private";
 
-// const LanguageDetect = import "require('languagedetect');
-
-import LanguageDetect from "languagedetect";
-const lngDetector = new LanguageDetect();
-
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
@@ -23,14 +18,25 @@ const sendMail = async (
   message: string,
   phone: string
 ) => {
-  const detection = lngDetector
-    .detect(message)
-    .slice(0, 5)
-    .map((a) => a[0]);
+  const listOfBannedWords = ["SEO", "business", "your website"];
 
-  if (!detection.includes("turkish")) {
-    return;
+  function checkBannedWords(
+    listOfWords: string[],
+    listOfBannedWords: string[]
+  ) {
+    for (const word of listOfBannedWords) {
+      if (listOfWords.includes(word)) {
+        return true;
+      }
+    }
+    return false;
   }
+
+  const listOfWords = message.split(/\W/);
+  if (checkBannedWords(listOfWords, listOfBannedWords)) {
+    return { error: true };
+  }
+
   const mailOptions = {
     from: env.EMAIL,
     to: env.EMAIL,
