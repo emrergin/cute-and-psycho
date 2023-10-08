@@ -18,7 +18,7 @@ const sendMail = async (
   message: string,
   phone: string
 ) => {
-  const listOfBannedWords = ["SEO", "business", "your website"];
+  const listOfBannedWords = ["seo", "business", "your website"];
 
   function checkBannedWords(
     listOfWords: string[],
@@ -32,7 +32,7 @@ const sendMail = async (
     return false;
   }
 
-  const listOfWords = message.split(/\W/);
+  const listOfWords = message.split(/\W/).map((w) => w.toLocaleLowerCase());
   if (checkBannedWords(listOfWords, listOfBannedWords)) {
     return { error: true };
   }
