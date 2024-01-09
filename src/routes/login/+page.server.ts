@@ -5,7 +5,7 @@ import { loginUser } from '$lib/loginUser';
 export const load: PageServerLoad = ({ locals }) => {
 
 	if (locals.user) {
-		throw redirect(307, '/admin');
+		redirect(307, '/admin');
 	}
 };
 
@@ -26,7 +26,7 @@ export const actions: Actions = {
 		const value = btoa(JSON.stringify(token));
 		cookies.set('jwt', value, { path: '/' });
 
-		throw redirect(307, '/admin');
+		redirect(307, '/admin');
 	}
 };
 

@@ -4,7 +4,7 @@ import { error, redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async function ({ locals }) {
-	if (!locals.user) throw redirect(302, `/login`);
+	if (!locals.user) redirect(302, `/login`);
 }
 
 export interface Article{
@@ -16,7 +16,7 @@ export interface Article{
 }
 export const actions: Actions = {
   default: async ({  locals, request }) => {
-	if (!locals.user) throw error(401);
+	if (!locals.user) error(401);
     const data = await request.formData();
 	const article:Article = {	
 					title: data.get('title') as string,
