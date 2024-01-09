@@ -63,7 +63,7 @@
     <div>
       {#each article.tagList as tag, i (tag)}
         <button
-          transition:scale|local={{ duration: 200 }}
+          transition:scale={{ duration: 200 }}
           animate:flip={{ duration: 200 }}
           on:click|preventDefault={() => {
             article.tagList = [
