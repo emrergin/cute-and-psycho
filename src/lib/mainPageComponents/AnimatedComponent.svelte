@@ -6,7 +6,7 @@
 
 <div
   use:inview={{ unobserveOnEnter: true, rootMargin: "-20%" }}
-  on:change={({ detail }) => {
+  on:inview_change={({ detail }) => {
     isInView = detail.inView;
   }}
 >
