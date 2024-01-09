@@ -1,3 +1,13 @@
+<script lang="ts">
+  import Hamburger from "$lib/icons/Hamburger.svelte";
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+
+  function openSidebar() {
+    dispatch("change", { isSidebarOpen: true });
+  }
+</script>
+
 <nav class="navbar">
   <div id="navbarsubbox">
     <a class="susluyazi navbar-brand hugetext" id="banner-name" href="/">
@@ -39,6 +49,9 @@
         >
       </a>
     </div>
+    <button class="hamburger" on:click={openSidebar}>
+      <Hamburger />
+    </button>
   </div>
 </nav>
 
@@ -112,6 +125,12 @@
     vertical-align: middle;
   }
 
+  .hamburger {
+    all: unset;
+    display: none;
+    cursor: pointer;
+  }
+
   @media (max-width: 600px) {
     #navbarsubbox {
       gap: 0.5rem;
@@ -122,6 +141,7 @@
     #navbarsubsubbox {
       gap: 30px;
       margin-inline: auto;
+      display: none;
     }
     .invis-when-small {
       display: none;
@@ -132,6 +152,10 @@
     #banner-name {
       padding-bottom: 1rem;
       max-height: 134px;
+    }
+    .hamburger {
+      display: block;
+      margin-block: auto;
     }
   }
 </style>
