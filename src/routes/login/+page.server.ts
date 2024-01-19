@@ -1,32 +1,29 @@
-import { fail, redirect } from '@sveltejs/kit';
-import type { PageServerLoad, Actions } from './$types';
-import { loginUser } from '$lib/loginUser';
+import { fail, redirect } from "@sveltejs/kit";
+import type { PageServerLoad, Actions } from "./$types";
+import { loginUser } from "$lib/loginUser";
 
 export const load: PageServerLoad = ({ locals }) => {
-
-	if (locals.user) {
-		redirect(307, '/admin');
-	}
+  if (locals.user) {
+    redirect(307, "/admin");
+  }
 };
 
 export const actions: Actions = {
-	default: async ({ cookies, request }) => {
-		const data = await request.formData();
+  default: async ({ cookies, request }) => {
+    const data = await request.formData();
 
-		const username = data.get('username')as string;
-		const password = data.get('password')as string;
+    const username = data.get("username") as string;
+    const password = data.get("password") as string;
 
-		const { error, token } = await loginUser(username, password);
+    const { error, token } = await loginUser(username, password);
 
+    if (error) {
+      return fail(401, { error });
+    }
 
-		if (error) {
-			return fail(401, {error});
-		}
+    const value = btoa(JSON.stringify(token));
+    cookies.set("jwt", value, { path: "/" });
 
-		const value = btoa(JSON.stringify(token));
-		cookies.set('jwt', value, { path: '/' });
-
-		redirect(307, '/admin');
-	}
+    redirect(307, "/admin");
+  },
 };
-
