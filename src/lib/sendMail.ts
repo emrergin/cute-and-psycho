@@ -16,7 +16,7 @@ const sendMail = async (
   name: string,
   email: string,
   message: string,
-  phone: string,
+  phone: string
 ) => {
   const listOfBannedWords = [
     "seo",
@@ -39,11 +39,15 @@ const sendMail = async (
     "$",
     "dollars",
     "read",
+    "traffic",
+    "listed",
+    "company",
+    "senaergin.com",
   ];
 
   function checkBannedWords(
     listOfWords: string[],
-    listOfBannedWords: string[],
+    listOfBannedWords: string[]
   ) {
     for (const word of listOfBannedWords) {
       if (listOfWords.includes(word)) {
