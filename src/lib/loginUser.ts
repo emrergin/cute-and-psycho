@@ -5,9 +5,6 @@ import { env } from "$env/dynamic/private";
 import jwt from "jsonwebtoken";
 
 const loginUser = async (username: string, password: string) => {
-  // const admin = await getAdmin();
-  // console.log(admin)
-  console.log(username, password, env.PASSWORD);
   if (username !== "admin") {
     return {
       error: "Yetkili değil misin nesin",
