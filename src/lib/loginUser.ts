@@ -1,11 +1,11 @@
-import { getAdmin } from "./api";
-import bcrypt from "bcryptjs";
-// import { JWT_ACCESS_SECRET } from '$env/static/private';
+// import { getAdmin } from "./api";
+// import bcrypt from "bcryptjs";
+// import { PASSWORD } from "$env/static/private";
 import { env } from "$env/dynamic/private";
 import jwt from "jsonwebtoken";
 
 const loginUser = async (username: string, password: string) => {
-  const admin = await getAdmin();
+  // const admin = await getAdmin();
   // console.log(admin)
   // console.log(username,password)
   if (username !== "admin") {
@@ -15,9 +15,9 @@ const loginUser = async (username: string, password: string) => {
   }
 
   // Verify the password
-  const passwordIsValid = await bcrypt.compare(password, admin.props.password);
+  // const passwordIsValid = await bcrypt.compare(password, admin.props.password);
 
-  if (!passwordIsValid) {
+  if (password !== env.PASSWORD) {
     return {
       error: "Yetkili değil misin nesin",
     };
@@ -27,7 +27,7 @@ const loginUser = async (username: string, password: string) => {
     username: "admin",
   };
 
-  const token = jwt.sign(jwtUser, env.JWT_ACCESS_SECRET, {
+  const token = jwt.sign(jwtUser, env.JWT_ACCESS_SECRET as string, {
     expiresIn: "1d",
   });
 

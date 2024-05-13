@@ -1,42 +1,95 @@
-import CyclicDb from "@cyclic.sh/dynamodb";
-const db = CyclicDb("fragile-galoshes-batCyclicDB");
+import { env } from "$env/dynamic/private";
+// import jwt from "jsonwebtoken";
+import { createKysely } from "@vercel/postgres-kysely";
+import type { Database, Post } from "./db/schema";
+// import { sql } from "kysely";
 
-import type { Article } from "../routes/editor/+page.server";
+// const passwordFromEnv = env.PASSWORD;
+const POSTGRES_URL = env.POSTGRES_URL;
 
-const blogs = db.collection("blogs");
-const users = db.collection("users");
+const db = createKysely<Database>({ connectionString: POSTGRES_URL });
 
-export async function post(data: Article) {
-  await blogs.set(crypto.randomUUID(), data);
+// export const loginUser = async (username: string, password: string) => {
+//   if (username !== "admin") {
+//     return {
+//       error: "Yetkili değil misin nesin",
+//     };
+//   }
+
+//   // Verify the password
+//   const passwordIsValid = passwordFromEnv === password;
+
+//   if (!passwordIsValid) {
+//     return {
+//       error: "Yetkili değil misin nesin",
+//     };
+//   }
+
+//   const jwtUser = {
+//     username: "admin",
+//   };
+
+//   const token = jwt.sign(jwtUser, env.JWT_ACCESS_SECRET || "", {
+//     expiresIn: "1d",
+//   });
+
+//   return { token };
+// };
+
+export async function getAll(tag?: string) {
+  if (tag) {
+    try {
+      const allPosts = await db
+        .selectFrom("post_psycho")
+        .selectAll()
+        // .where(sql`${tag} = ANY(taglist)`)
+        .execute();
+
+      return allPosts;
+    } catch (e) {
+      return [];
+    }
+  } else {
+    const allPosts = await db.selectFrom("post_psycho").selectAll().execute();
+    return allPosts;
+  }
 }
 
-export async function put(key: string, data: Article) {
-  await blogs.set(key, data);
+export async function post(params: Omit<Post, "created_at">) {
+  const { title, description, body, taglist, image } = params;
+  await db
+    .insertInto("post_psycho")
+    .values({
+      title,
+      description,
+      body,
+      taglist,
+      image,
+    })
+    .execute();
 }
 
-export async function deleteBlog(id: string) {
-  await blogs.delete(id);
+export async function getPost(id: number) {
+  const post = await db
+    .selectFrom("post_psycho")
+    .selectAll()
+    .where("id", "=", id)
+    .execute();
+
+  return post[0];
 }
 
-export async function getAll() {
-  const { results: articleMetaData } = await blogs.list();
-
-  const articles = await Promise.all(
-    articleMetaData.map(async ({ key }: { key: string }) => ({
-      ...(await blogs.get(key)).props,
-      key,
-    })),
-  );
-
-  return articles;
+export async function deletePost(id: number) {
+  await db
+    .deleteFrom("post_psycho")
+    .where("post_psycho.id", "=", id)
+    .executeTakeFirst();
 }
 
-export async function getAdmin() {
-  const admin = await users.get("admin");
-  return admin;
-}
-
-export async function getSingleArticle(key: string) {
-  const article = await blogs.get(key);
-  return article;
+export async function updatePost(id: number, newProperties: Partial<Post>) {
+  await db
+    .updateTable("post_psycho")
+    .set(newProperties)
+    .where("id", "=", id)
+    .executeTakeFirst();
 }
