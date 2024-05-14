@@ -20,7 +20,7 @@ interface PostTable {
   created_at: ColumnType<Date, string | undefined, never>;
 }
 
-export type Post = Omit<PostTable, "id" | "modified_at">;
+export type Post = Omit<PostTable, "id" | "modified_at" | "created_at">;
 
 // Keys of this interface are table names.
 export interface Database {

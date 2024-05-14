@@ -1,30 +1,28 @@
 import { error, redirect } from "@sveltejs/kit";
-import * as api from "$lib/api.js";
 import type { PageServerLoad, Actions } from "./$types";
+import { getPost, updatePost } from "$lib/api";
 
 export const load: PageServerLoad = async function ({ locals, params }) {
   if (!locals.user) redirect(302, `/login`);
 
-  const { props } = await api.getSingleArticle(params.slug);
-  // console.log(props);
-  return props;
+  const article = await getPost(Number(params.slug));
+  return article;
 };
 
 /** @type {import('./$types').Actions} */
-// export const actions = {
 export const actions: Actions = {
   default: async ({ locals, params, request }) => {
     if (!locals.user) error(401);
 
     const data = await request.formData();
     const article = {
-      title: data.get("title"),
-      description: data.get("description"),
-      body: data.get("body"),
+      title: (data.get("title") as string) || "Untitled",
+      description: (data.get("description") as string) || "",
+      body: (data.get("body") as string) || "",
       tagList: data.getAll("tag"),
-      image: data.get("imageLink"),
+      image: data.get("imageLink") as string,
     };
-    await api.put(params.slug, article);
+    await updatePost(Number(params.slug), article);
 
     redirect(303, `/posts/${params.slug}`);
   },

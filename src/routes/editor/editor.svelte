@@ -2,8 +2,8 @@
   import { scale } from "svelte/transition";
   import { flip } from "svelte/animate";
   import { enhance } from "$app/forms";
-  import type { Article } from "./proxy+page.server";
-  export let article: Article;
+  import type { Post } from "$lib/db/schema";
+  export let article: Post;
 
   function handleTag(
     e: KeyboardEvent & {
@@ -13,8 +13,8 @@
     if (e.key === "Enter") {
       e.preventDefault();
       if (e.currentTarget) {
-        if (!article.tagList.includes(e.currentTarget.value)) {
-          article.tagList = [...article.tagList, e.currentTarget.value];
+        if (!article.taglist.includes(e.currentTarget.value)) {
+          article.taglist = [...article.taglist, e.currentTarget.value];
         }
         e.currentTarget.value = "";
       }
@@ -61,14 +61,14 @@
     </fieldset>
 
     <div>
-      {#each article.tagList as tag, i (tag)}
+      {#each article.taglist as tag, i (tag)}
         <button
           transition:scale={{ duration: 200 }}
           animate:flip={{ duration: 200 }}
           on:click|preventDefault={() => {
-            article.tagList = [
-              ...article.tagList.slice(0, i),
-              ...article.tagList.slice(i + 1),
+            article.taglist = [
+              ...article.taglist.slice(0, i),
+              ...article.taglist.slice(i + 1),
             ];
           }}
           aria-label="Remove {tag} tag"
@@ -79,7 +79,7 @@
       {/each}
     </div>
 
-    {#each article.tagList as tag}
+    {#each article.taglist as tag}
       <input hidden name="tag" value={tag} />
     {/each}
 

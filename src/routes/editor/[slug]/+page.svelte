@@ -1,8 +1,7 @@
-<script>
-	import Editor from '../editor.svelte';
-	export let data;
-	export let form;
-	// console.log(data)
+<script lang="ts">
+  import type { Post } from "$lib/db/schema";
+  import Editor from "../editor.svelte";
+  export let data: Post;
 </script>
 
-<Editor article={data} errors={form?.errors} />
+<Editor article={data} />

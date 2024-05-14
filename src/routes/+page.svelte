@@ -6,9 +6,10 @@
   import Iletisim from "../lib/mainPageComponents/Iletisim.svelte";
   import AnimatedComponent from "../lib/mainPageComponents/AnimatedComponent.svelte";
   import Randevu from "$lib/mainPageComponents/Randevu.svelte";
+  import type { Post } from "$lib/db/schema";
 
   export let form;
-  export let data;
+  export let data: Post[];
 </script>
 
 <div class="container mt-5">
