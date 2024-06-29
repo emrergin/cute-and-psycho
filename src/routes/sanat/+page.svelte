@@ -64,7 +64,7 @@
   <a
     href="https://docs.google.com/forms/d/e/1FAIpQLSf6fE2pQWgegM0szfjghnJmUBbXI924bR-rP-v4vMVTENnOBw/viewform?usp=sf_link"
     class="apply-button floating-button small-in-mobile"
-    target="_blank">Kaydol!</a
+    target="_blank">Kaydol</a
   >
   <dialog id="apply-dialog">
     <p>Kontenjan dolmadan yerinizi ayırtın!</p>
@@ -144,10 +144,17 @@
     font-size: 1em;
   }
 
+  dialog {
+    opacity: 0;
+    display: block;
+  }
+
   dialog[open] {
     border: green 0 solid;
     border-radius: 2rem;
     padding: 3rem;
+    opacity: 1;
+    transition: opacity 2s;
   }
 
   dialog > p {
@@ -185,9 +192,13 @@
         rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     }
 
+    .floating-button {
+      border: #8c76b6 2px solid !important;
+    }
+
     .small-in-mobile {
-      font-size: 0.75em;
-      padding: 0.5rem 1rem;
+      font-size: 0.95em;
+      padding: 0.5rem 1.2rem;
     }
   }
 </style>

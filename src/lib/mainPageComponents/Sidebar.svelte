@@ -35,6 +35,7 @@
     <a class="sidebar-link" on:click={close} href="/posts/">Blog</a>
     <a class="sidebar-link" on:click={close} href="/#iletisim">İletişim</a>
     <a class="sidebar-link" on:click={close} href="/#randevu">Randevu</a>
+    <a class="sidebar-link" on:click={close} href="/sanat/"> Atölyeler </a>
     <div class="social-media-icons">
       <a
         id="instagram-link"

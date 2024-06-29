@@ -48,7 +48,6 @@ h1 > a {
 }
 
 .container {
-  /* font-family: 'Open Sans', sans-serif; */
   font-size: 20px;
   line-height: 2.75ex;
   display: flex;
@@ -71,7 +70,6 @@ h1 > a {
   text-align: center;
   cursor: pointer;
   transition: all 0.2s ease-in;
-  /* font-size:20px; */
 }
 
 .button:hover {
@@ -99,5 +97,6 @@ h1 > a {
 
   .container {
     padding-block: 1rem;
+    font-size: 16px;
   }
 }

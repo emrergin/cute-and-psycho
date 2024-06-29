@@ -20,6 +20,7 @@
       <a class="navbar-brand invis-when-small" href="/posts/"> Blog </a>
       <a class="navbar-brand" href="/#iletisim"> İletişim </a>
       <a class="navbar-brand invis-when-small" href="/#randevu"> Randevu </a>
+      <a class="navbar-brand invis-when-small" href="/sanat"> Atölyeler </a>
       <a
         id="instagram-link"
         aria-label="İnstagram gönderilerim"

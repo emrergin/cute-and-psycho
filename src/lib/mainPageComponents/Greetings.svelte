@@ -3,19 +3,28 @@
 </script>
 
 <div class="imageandtext">
-  <figure>
-    <img src={sena} alt="hanimefendinin fotografi" />
-  </figure>
+  <img src={sena} alt="hanimefendinin fotografi" />
   <div class="greetings">
     <p>Merhaba.</p>
 
     <p>Ben Uzman Klinik Psikolog Sena Ergin.</p>
 
     <p>
-      Bu sitede özgeçmişim ve çalıştığım alanlar hakkında bilgi edinebilirsiniz.
+      Yetişkin ve ergenlere yaşamdaki zorluklarla başa çıkma, stres ve kaygı
+      yönetimi, mükemmelliyetçilik, kişisel gelişim gibi konularda destek
+      sunuyorum.
     </p>
 
-    <p>Ayrıca ruh sağlığına dair yazılarıma da buradan ulaşabilirsiniz.</p>
+    <p>
+      Web sitemde, eğitimim, deneyimlerim ve uzmanlık alanlarım hakkında
+      ayrıntılı bilgilere ulaşabilirsiniz. Ayrıca, ruh sağlığı ve kişisel
+      gelişim konularında yazdığım blog yazılarını da buradan okuyabilirsiniz.
+    </p>
+
+    <p>
+      Daha anlamlı ve dengeli bir yaşam için gerekli adımları birlikte
+      atabiliriz.
+    </p>
     <a class="button" href="#iletisim">İletişim</a>
   </div>
 </div>
@@ -25,51 +34,34 @@
     text-decoration: none;
   }
 
-  figure {
-    position: relative;
-    width: 48%;
-    overflow: hidden;
-    margin-bottom: 0px;
-  }
-
-  figure img {
-    min-height: 400px;
-    width: 100%;
-    object-position: center;
-    object-fit: cover;
-    display: block;
-    float: left;
-  }
-
   .imageandtext {
     display: flex;
-    gap: min(2vw, 2rem);
-    align-items: center;
+    flex-wrap: wrap;
     background-color: var(--bej);
+    justify-content: center;
   }
 
   .greetings {
-    padding-block: 5rem;
-    padding-right: max(3vw, 1rem);
-    width: 48%;
+    padding: 1.2rem 2rem;
+    align-self: center;
   }
 
-  @media (max-width: 600px) {
-    figure {
-      margin-left: 5px;
-      margin-right: 8px;
-      padding-top: 3rem;
-    }
+  img {
+    max-width: 80vw;
+  }
+
+  @media (min-width: 600px) {
     .greetings {
-      padding-top: 3rem;
       font-size: 0.9em;
     }
-    img {
-      float: left;
-    }
     .imageandtext {
-      gap: 3px;
-      align-items: flex-start;
+      flex-wrap: nowrap;
+      padding-left: 1.2rem;
+      padding-block: 0.8rem;
+    }
+
+    img {
+      max-width: 48%;
     }
   }
 </style>
