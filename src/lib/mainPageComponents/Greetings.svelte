@@ -48,6 +48,8 @@
 
   img {
     max-width: 80vw;
+    aspect-ratio: 12 / 9;
+    object-fit: cover;
   }
 
   @media (min-width: 600px) {
