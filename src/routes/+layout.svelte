@@ -5,7 +5,6 @@
   import Sidebar from "$lib/mainPageComponents/Sidebar.svelte";
   import "@fontsource-variable/epilogue";
   import "@fontsource-variable/montserrat";
-  import "@fontsource-variable/montserrat";
 
   let isSidebarOpen = false;
 

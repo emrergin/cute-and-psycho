@@ -1,7 +1,7 @@
 <script lang="ts">
   import { inview } from "svelte-inview";
 
-  let isInView: boolean;
+  export let isInView: boolean = false;
 </script>
 
 <div
@@ -11,11 +11,7 @@
   }}
 >
   <div class:animate={isInView} class="animated">
-    {#if isInView}
-      <slot />
-    {:else}
-      <div class="placeholder" />
-    {/if}
+    <slot show={isInView} />
   </div>
 </div>
 
@@ -27,9 +23,5 @@
 
   .animate {
     opacity: 1;
-  }
-
-  .placeholder {
-    height: 300px;
   }
 </style>

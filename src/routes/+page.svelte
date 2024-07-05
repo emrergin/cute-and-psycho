@@ -10,6 +10,7 @@
 
   export let form;
   export let data: Post[];
+  let isInView = false;
 </script>
 
 <div class="container mt-5">
@@ -26,7 +27,7 @@
   <AnimatedComponent>
     <Iletisim {form} />
   </AnimatedComponent>
-  <AnimatedComponent>
-    <Randevu />
+  <AnimatedComponent {isInView} let:show>
+    <Randevu isInView={show} />
   </AnimatedComponent>
 </div>
