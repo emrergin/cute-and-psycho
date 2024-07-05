@@ -1,12 +1,33 @@
 <script lang="ts">
   import Hamburger from "$lib/icons/Hamburger.svelte";
   import { createEventDispatcher } from "svelte";
+  import "@fontsource/sacramento";
+  import sacra1 from "@fontsource/sacramento/files/sacramento-latin-400-normal.woff2?url";
+  import sacra2 from "@fontsource/sacramento/files/sacramento-latin-400-normal.woff?url";
+
   const dispatch = createEventDispatcher();
 
   function openSidebar() {
     dispatch("change", { isSidebarOpen: true });
   }
 </script>
+
+<svelte:head>
+  <link
+    rel="preload"
+    as="font"
+    type="font/woff2"
+    href={sacra1}
+    crossorigin="true"
+  />
+  <link
+    rel="preload"
+    as="font"
+    type="font/woff"
+    href={sacra2}
+    crossorigin="true"
+  />
+</svelte:head>
 
 <nav class="navbar">
   <div id="navbarsubbox">

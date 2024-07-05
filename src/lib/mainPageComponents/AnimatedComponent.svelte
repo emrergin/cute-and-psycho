@@ -11,7 +11,11 @@
   }}
 >
   <div class:animate={isInView} class="animated">
-    <slot />
+    {#if isInView}
+      <slot />
+    {:else}
+      <div class="placeholder" />
+    {/if}
   </div>
 </div>
 
@@ -23,5 +27,9 @@
 
   .animate {
     opacity: 1;
+  }
+
+  .placeholder {
+    height: 300px;
   }
 </style>
