@@ -10,7 +10,7 @@
 
   export let form;
   export let data: Post[];
-  let isInView = false;
+  let showAppointment = false;
 </script>
 
 <div class="container mt-5">
@@ -27,7 +27,7 @@
   <AnimatedComponent>
     <Iletisim {form} />
   </AnimatedComponent>
-  <AnimatedComponent {isInView} let:show>
+  <AnimatedComponent isInView={showAppointment} let:show margin={40}>
     <Randevu isInView={show} />
   </AnimatedComponent>
 </div>

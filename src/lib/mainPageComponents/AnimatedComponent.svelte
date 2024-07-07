@@ -2,10 +2,11 @@
   import { inview } from "svelte-inview";
 
   export let isInView: boolean = false;
+  export let margin: number = 20;
 </script>
 
 <div
-  use:inview={{ unobserveOnEnter: true, rootMargin: "-20%" }}
+  use:inview={{ unobserveOnEnter: true, rootMargin: `-${margin}%` }}
   on:inview_change={({ detail }) => {
     isInView = detail.inView;
   }}
