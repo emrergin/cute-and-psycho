@@ -27,7 +27,7 @@
   <AnimatedComponent>
     <Iletisim {form} />
   </AnimatedComponent>
-  <AnimatedComponent isInView={showAppointment} let:show margin={60}>
+  <AnimatedComponent isInView={showAppointment} let:show margin={"1000px"}>
     <Randevu isInView={show} />
   </AnimatedComponent>
 </div>

@@ -13,7 +13,7 @@
     scrolling="no"
   />
 {:else}
-  <div id="randevu" style="height:300px;"></div>
+  <div id="randevu" class="randevu"></div>
 {/if}
 
 <style>
