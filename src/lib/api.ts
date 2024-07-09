@@ -1,40 +1,10 @@
 import { env } from "$env/dynamic/private";
-// import jwt from "jsonwebtoken";
 import { createKysely } from "@vercel/postgres-kysely";
 import type { Database, Post } from "./db/schema";
-// import { sql } from "kysely";
 
-// const passwordFromEnv = env.PASSWORD;
 const POSTGRES_URL = env.POSTGRES_URL;
 
 const db = createKysely<Database>({ connectionString: POSTGRES_URL });
-
-// export const loginUser = async (username: string, password: string) => {
-//   if (username !== "admin") {
-//     return {
-//       error: "Yetkili değil misin nesin",
-//     };
-//   }
-
-//   // Verify the password
-//   const passwordIsValid = passwordFromEnv === password;
-
-//   if (!passwordIsValid) {
-//     return {
-//       error: "Yetkili değil misin nesin",
-//     };
-//   }
-
-//   const jwtUser = {
-//     username: "admin",
-//   };
-
-//   const token = jwt.sign(jwtUser, env.JWT_ACCESS_SECRET || "", {
-//     expiresIn: "1d",
-//   });
-
-//   return { token };
-// };
 
 export async function getAll(tag?: string) {
   if (tag) {
@@ -42,6 +12,7 @@ export async function getAll(tag?: string) {
       const allPosts = await db
         .selectFrom("post_psycho")
         .selectAll()
+        .orderBy("created_at", "desc")
         // .where(sql`${tag} = ANY(taglist)`)
         .execute();
 
@@ -50,7 +21,11 @@ export async function getAll(tag?: string) {
       return [];
     }
   } else {
-    const allPosts = await db.selectFrom("post_psycho").selectAll().execute();
+    const allPosts = await db
+      .selectFrom("post_psycho")
+      .selectAll()
+      .orderBy("id", "desc")
+      .execute();
     return allPosts;
   }
 }

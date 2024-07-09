@@ -1,5 +1,4 @@
 // import { getAdmin } from "./api";
-// import bcrypt from "bcryptjs";
 // import { PASSWORD } from "$env/static/private";
 import { env } from "$env/dynamic/private";
 import jwt from "jsonwebtoken";
@@ -12,7 +11,6 @@ const loginUser = async (username: string, password: string) => {
   }
 
   // Verify the password
-  // const passwordIsValid = await bcrypt.compare(password, admin.props.password);
 
   if (password !== env.PASSWORD) {
     return {
