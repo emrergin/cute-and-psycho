@@ -2,10 +2,10 @@
 
 I am making this for **my wife**. She is the **best psychologist** I ever know.
 
-Technically, the site uses **SvelteKit** for both front end back end. Deployment is done via **cyclic**, and will be using **DynamoDB** for upcoming blogposts.
+The site uses **SvelteKit** for both front end back end. Deployment is done via **cyclic**, and uses Postgres for blogposts.
 
 ### Sources
-- [Cyclic](https://app.cyclic.sh/#/join/emrergin)(referral link)
+
 - [SvelteKit](https://kit.svelte.dev/)
 - A lot of code refactored from: https://github.com/sveltejs/realworld
 - https://miracleio.me/snippets/use-gmail-with-nodemailer/#setting-up-nodemailer-in-a-node-project
@@ -16,8 +16,9 @@ Technically, the site uses **SvelteKit** for both front end back end. Deployment
 - https://dev.to/dan_1s/visibility-detection-using-svelte-2e96
 
 ### Icons
+
 - Instagram:
-    - https://icon-sets.iconify.design/mdi/instagram/
+  - https://icon-sets.iconify.design/mdi/instagram/
 - Youtube:
-    - https://icon-sets.iconify.design/mdi/youtube/
+  - https://icon-sets.iconify.design/mdi/youtube/
 - Good for browsing Iconify: https://icones.js.org

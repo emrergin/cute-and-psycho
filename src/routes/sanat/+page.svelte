@@ -7,6 +7,7 @@
   import img5 from "$lib/assets/sanat/5.png";
   import img6 from "$lib/assets/sanat/6.png";
   import img7 from "$lib/assets/sanat/7.png";
+  import img8 from "$lib/assets/sanat/8.png";
 
   let dialog: null | HTMLDialogElement = null; // Reference to the dialog tag
   let container: null | HTMLElement = null;
@@ -50,6 +51,9 @@
       destroy: () => observer.disconnect(),
     };
   }
+
+  const formLink =
+    "https://docs.google.com/forms/d/e/1FAIpQLSdG0lKWGU2REmUKeqkQtZADhYuxGGHADnbGsN78xHUiuIBtug/viewform?usp=sf_link";
 </script>
 
 <div class="main-container">
@@ -59,10 +63,11 @@
   <img src={img4} alt="atolye detaylari 4" />
   <img src={img5} alt="atolye detaylari 5" />
   <img src={img6} alt="atolye detaylari 6" />
-  <img src={img7} alt="atolye detaylari 7" use:timer />
+  <img src={img7} alt="atolye detaylari 7" />
+  <img src={img8} alt="atolye detaylari 8" use:timer />
 
   <a
-    href="https://docs.google.com/forms/d/e/1FAIpQLSf6fE2pQWgegM0szfjghnJmUBbXI924bR-rP-v4vMVTENnOBw/viewform?usp=sf_link"
+    href={formLink}
     class="apply-button floating-button small-in-mobile"
     target="_blank">Kaydol</a
   >
@@ -81,10 +86,8 @@
     >
       x
     </div>
-    <a
-      href="https://docs.google.com/forms/d/e/1FAIpQLSf6fE2pQWgegM0szfjghnJmUBbXI924bR-rP-v4vMVTENnOBw/viewform?usp=sf_link"
-      target="_blank"
-      class="apply-button dialog-button">Kaydol!</a
+    <a href={formLink} target="_blank" class="apply-button dialog-button"
+      >Kaydol!</a
     >
   </dialog>
 </div>
