@@ -57,6 +57,9 @@ const sendMail = async (
     "financial",
     "profit",
     "price",
+    "spam",
+    "messages",
+    "details",
   ];
 
   function checkBannedWords(
