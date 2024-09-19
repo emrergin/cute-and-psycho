@@ -42,7 +42,21 @@ const sendMail = async (
     "traffic",
     "listed",
     "company",
-    "senaergin.com",
+    "senaergin",
+    "bank",
+    "cool",
+    "benefits",
+    "amazing",
+    "money",
+    "selling",
+    "value",
+    "videos",
+    "bills",
+    "quiz",
+    "survey",
+    "financial",
+    "profit",
+    "price",
   ];
 
   function checkBannedWords(
@@ -57,7 +71,10 @@ const sendMail = async (
     return false;
   }
 
-  const listOfWords = message.split(/\W/).map((w) => w.toLocaleLowerCase());
+  const listOfWords = message
+    .split(/[^\w$]+/)
+    .map((w) => w.toLocaleLowerCase());
+
   if (checkBannedWords(listOfWords, listOfBannedWords)) {
     return { error: true };
   }
