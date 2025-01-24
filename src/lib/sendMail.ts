@@ -60,6 +60,16 @@ const sendMail = async (
     "spam",
     "messages",
     "details",
+    "deal",
+    "businesses",
+    "deals",
+    "time",
+    "let",
+    "cool",
+    "coolest",
+    "brand",
+    "geotrott",
+    "present",
   ];
 
   function checkBannedWords(

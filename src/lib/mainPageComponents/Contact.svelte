@@ -2,11 +2,14 @@
   import LocationIcon from "$lib/icons/LocationIcon.svelte";
   import Mail from "$lib/icons/Mail.svelte";
   import WhatsappIcon from "$lib/icons/WhatsappIcon.svelte";
+
+  let whatsappText =
+    "https://wa.me/+905102217924?text=Merhaba%2C%20terapi%20hizmetleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.";
 </script>
 
 <div class="info-container">
   <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.4117997250123!2d31.601616599999996!3d40.7309634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409d3f6e7e1f7959%3A0x7be7b3f0900f27ac!2sTabaklar%2C%20Vaysal%20Sk.%20No%3A5%2C%2014100%20Bolu%20Merkez%2FBolu!5e0!3m2!1str!2str!4v1726778055303!5m2!1str!2str"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.4898966830247!2d31.588888000000004!3d40.72924460000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x409d3f0b8ce7d63d%3A0xebd3b7976f45cf51!2zQmHEn2xhbSBEYW7EscWfbWFubMSxaw!5e0!3m2!1str!2str!4v1737712181535!5m2!1str!2str"
     width="500"
     height="450"
     style="border:0;max-width:100%;"
@@ -19,18 +22,12 @@
 
   <div class="contact-info-box">
     <div class="contact-info">
-      <a
-        href="https://wa.me/+905102217924?text=Merhaba%2C%20terapi%20hizmetleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-        class="float"
-        target="_blank"
-      >
+      <a href={whatsappText} class="float" target="_blank">
         <WhatsappIcon />
       </a>
 
-      <a
-        href="https://wa.me/+905102217924?text=Merhaba%2C%20terapi%20hizmetleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-        target="_blank"
-        class="tel-link">+90 (510) 221 79 24</a
+      <a href={whatsappText} target="_blank" class="tel-link"
+        >+90 (510) 221 79 24</a
       >
     </div>
     <div class="contact-info">
@@ -42,7 +39,7 @@
       {" "}
       <LocationIcon width="2em" height="2em" />
       <div>
-        Tabaklar Mah, Vaysal Sk. No:5, Ergür Apt, Daire: 20, Merkez/Bolu
+        Borazanlar, Mehmet Akif Ersoy Blv. Begonya Apt D:42/6, Merkez/Bolu
       </div>
     </div>
   </div>

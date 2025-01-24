@@ -1,22 +1,35 @@
 <div class="hakkimda">
   <div class="susluyazi hugetext maintitle" id="hakkimda">Hakkımda</div>
+
   <p>
-    İstanbul Üniversitesi Psikoloji bölümünden 2016 yılında mezun oldum. Lisans
-    eğitimim boyunca çeşitli hastane ve anaokullarında staj yaptım.
+    Psikoloji lisans eğitimimi İstanbul Üniversitesi’nde, Klinik Psikoloji
+    yüksek lisansımı ise Ankara Sosyal Bilimler Üniversitesi'nde tamamladım.
+    Eğitim ve profesyonel gelişim sürecimde çeşitli terapi ekollerine yönelik
+    eğitimler aldım. Şu anda Bilişsel Davranışçı Terapi (BDT), Kabul ve
+    Kararlılık Terapisi (ACT) ve Sanat Terapisi yaklaşımlarını kullanarak
+    danışanlarıma destek sunuyorum.
   </p>
+
   <p>
-    Mezuniyetimin sonrasında iki sene Hollanda Maastricht Üniversitesi Beyin ve
-    Duygu Laboratuarında stajyer araştırmacı olarak araştırmalarda yer aldım.
+    Uzmanlık alanlarım arasında yetişkinler ve ergenlerde kaygı ve stres
+    yönetimi, depresyon, yas süreci ve ilişkilerde yaşanan zorluklar bulunuyor.
+    Ayrıca, duygusal dayanıklılık geliştirme ve otoimmün hastalıklarla başa
+    çıkma konularında da çalışmalar yapıyorum. Amacım, danışanlarımın
+    kendilerini daha iyi anlamalarına ve yaşam kalitelerini artırmalarına
+    yardımcı olmak.
   </p>
+
   <p>
-    2020 yılında başladığım Ankara Sosyal Bilimler Üniversitesi Klinik Psikoloji
-    Yüksek lisansımı 2022 yılında tamamladım. Yüksek lisans eğitimim dahilinde
-    Bilişsel Davranışçı Terapi eğitimi ve süpervizyon aldım.
+    Psikoloji ve edebiyat alanlarında yazarlık ve çevirmenlik yapıyorum. Şu anda
+    ergenler için bir kendi kendine yardım kitabı üzerinde çalışıyorum. Bu
+    kitabın, gençlerin kendilerini daha iyi tanımalarına ve içsel güçlerini
+    keşfetmelerine katkı sağlamasını hedefliyorum.
   </p>
+
   <p>
-    Klinik alandaki gelişimim için süpervizyon almaya devam ediyorum. Bilişsel
-    Davranışçı Terapinin yanı sıra Kabul Kararlılık Terapisi ve Danışan Odaklı
-    Terapi yaklaşımına ilgi duyuyorum.
+    Daha fazla bilgi almak veya benimle çalışmak isterseniz, iletişim formu,
+    e-posta veya WhatsApp yoluyla benimle <a href="#iletisim">iletişim</a>e
+    geçebilirsiniz.
   </p>
 </div>
 

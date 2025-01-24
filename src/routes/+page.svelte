@@ -22,10 +22,10 @@
     <Neden />
   </AnimatedComponent>
   <AnimatedComponent>
-    <Bloglar {data} />
+    <Iletisim {form} />
   </AnimatedComponent>
   <AnimatedComponent>
-    <Iletisim {form} />
+    <Bloglar {data} />
   </AnimatedComponent>
   <AnimatedComponent isInView={showAppointment} let:show margin={"1000px"}>
     <Randevu isInView={show} />
