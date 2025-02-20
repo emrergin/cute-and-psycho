@@ -19,7 +19,7 @@ export const actions: Actions = {
       title: (data.get("title") as string) || "Untitled",
       description: (data.get("description") as string) || "",
       body: (data.get("body") as string) || "",
-      tagList: data.getAll("tag"),
+      taglist: data.getAll("tag") as string[],
       image: data.get("imageLink") as string,
     };
     await updatePost(Number(params.slug), article);
