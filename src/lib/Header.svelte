@@ -76,7 +76,7 @@
         >
       </a>
     </div>
-    <button class="hamburger" on:click={openSidebar}>
+    <button class="hamburger" on:click={openSidebar} aria-label="open sidebar">
       <Hamburger />
     </button>
   </div>

@@ -22,7 +22,12 @@
 
   <div class="contact-info-box">
     <div class="contact-info">
-      <a href={whatsappText} class="float" target="_blank">
+      <a
+        href={whatsappText}
+        class="float"
+        target="_blank"
+        aria-label="whatsappı ac"
+      >
         <WhatsappIcon />
       </a>
 
